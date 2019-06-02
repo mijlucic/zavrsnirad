@@ -8,27 +8,72 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
 
+    <div>
+      Video: <select id="camera"></select>
+    </div>
     <video autoplay></video>
 
     <script>
       //Ovdje pocinje sa tutorijala
-      navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-      if (navigator.getUserMedia) {
-        navigator.getUserMedia({ audio: true, video: { width: 1280, height: 720 } },
-                function(stream) {
-                  var video = document.querySelector('video');
-                  video.srcObject = stream;
-                  video.onloadedmetadata = function(e) {
-                    video.play();
-                  };
-                },
-                function(err) {
-                  console.log("The following error occurred: " + err.name);
+
+        var video = document.querySelector('video');
+        var videoSelect = document.querySelector('#camera');
+        navigator.mediaDevices.enumerateDevices()
+          .then(function (sourceInfos) {
+            console.log("Kebg", sourceInfos.length);
+            for(var i=0; i !== sourceInfos.length; ++i) {
+              var sourceInfo = sourceInfos[i];
+              console.log("fsadf", sourceInfos[i])
+              var option = document.createElement('option');
+              option.value = sourceInfo.id;
+              if(sourceInfo.kind === 'videoinput') {
+                console.log("Bil osta", sourceInfo);
+                option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
+                videoSelect.appendChild(option);
+              }
+            }
+          });//(getCameras); //getSources is depraceted
+
+        videoSelect.onchange = startStream;
+
+        startStream();
+
+        function startStream() {
+          navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+          if (navigator.getUserMedia) {
+            var constraints = {
+              audio: false,
+              video: {
+                //width: 1280,
+                //height: 720,
+                mandatory: { //IZBRISAT NAKNADNIO
+                  maxWidth: 640,
+                  maxHeight: 360,
+                  minWidth: 640,
+                  minHeight: 360
                 }
-        );
-      } else {
-        console.log("getUserMedia not supported");
-      }
+              }
+            };
+          } else {
+            console.log("getUserMedia not supported");
+          }
+
+          navigator.getUserMedia(constraints, onSuccess, onError);
+
+        }
+
+        function onSuccess(stream) {
+          video.srcObject = stream;
+          video.className = "grayscale_filter";
+          video.onloadedmetadata = function(e) {
+            video.play();
+          };
+        }
+        function onError(err) {
+          console.log("The following error occurred: " + err.name);
+        }
+
+
 
     </script>
   </body>
