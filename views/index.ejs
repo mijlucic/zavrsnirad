@@ -2,31 +2,180 @@
 <html>
   <head>
     <title><%= title %></title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">-->
+    <!--<link rel="icon" href="img/favicon.ico" type="image/x-icon">-->
+    <script language="javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-
-    <div>
-      Video: <select id="camera"></select>
-      Zvuk: <select id="audio-source"></select>
+  <!--[if lte IE 9]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="nav">
+    <a class="navbar-brand head-text" href="#">
+      <img src="images/logo-head.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link head-text" href="index.html" >Početna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link head-text" href="signal">Web konzultacije</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link head-text">Rezultati testiranja</a>
+        </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <a class="nav-link head-text" href="registracija.php">Registracija</a>
+        <a class="nav-link head-text" href="prijava.php">Prijava</a>
+      </div>
+      <!--<form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Pretraži..." aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pretraži</button>
+      </form>-->
     </div>
+  </nav>
+  <div style="height: 15px"></div>
 
-    <p><button id="takeProfile" type="button" autofocus="true">Create a profile picture</button></p>
-    <video id="videoTag" autoplay></video>
-
-    <canvas id="profilePicCanvas" style="display: none;"></canvas>
-    <div>
-      <img id="profilePictureOutput">
+  <div class="container">
+    <!-- <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active">Data</li>
+    </ol> -->
+    <div class="jumbotron">
+      <img src="images/logo-stre.png" style="float: left; display: inline;">
+      <div style="text-align: right; display: inline;">
+        <h1 class="display-3">Web konzultacije</h1>
+        <h1><%= title %></h1>
+        <p class="lead">Multi-streaming platforma za jednostavnu i brzu komunikaciju profesora i studenata</p>
+        <hr class="my-4">
+        <p>Tema rada: Prakse testiranja programskih proizvoda</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" role="button" href="screensharing.html">Pristupite kao PROFESOR</a>
+          <a class="btn btn-secondary btn-lg" role="button" href="screensharing.html">Pristupite kao STUDENT</a>
+        </p>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <div class="col-6">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0"> “You can see a lot by just looking.”</p>
+              <footer class="blockquote-footer"><cite title="Source Title">Yogi Berra</cite></footer>
+            </blockquote>
+          </div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Audio stream</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <div>
+                  Video: <select id="camera"></select>
+                  Zvuk: <select id="audio-source"></select>
+                </div>
+
+                <p><button id="takeProfile" type="button" autofocus="true">Create a profile picture</button></p>
+                <video id="videoTag" autoplay></video>
+
+                <canvas id="profilePicCanvas" style="display: none;"></canvas>
+                <div>
+                  <img id="profilePictureOutput">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Video stream</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Peer-to-peer</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-3">
+          <h3 class="card-header">Multimedia</h3>
+          <div class="card-body">
+            <h5 class="card-title">WebRTC</h5>
+            <h6 class="card-subtitle text-muted">Real-Time Communications</h6>
+          </div>
+          <img style="height: 200px; width: 100%; display: block;" src="images/webrtc-diagram.png" alt="Card image">
+          <div class="card-body">
+            <p class="card-text">WebRTC is a free, open project that provides browsers and mobile applications with Real-Time Communications (RTC) capabilities via simple APIs. The WebRTC components have been optimized to best serve this purpose.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="height: 30px"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <p>Copyright &copy; 2019. Mijo Lučić</p>
+          <p>Fakultet organizacije i informatike Varaždin</p>
+        </div>
+        <div class="col-4">
+          <p>Napomena: Aplikacija je dio istraživačkog dijela završnog rada na temu "Prakse testiranja programskih proizvoda"</p>
+        </div>
+        <div class="col-4">
+          <p>Istraživački dio završnog rada na temu: "Prakse testiranja programskih proizvoda"</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
     <script>
-      //Ovdje pocinje sa tutorijala
 
-        var video = document.querySelector('video');
-        var videoSelect = document.querySelector('#camera');
-        var audioSelect = document.querySelector('#audio-source'); //IMPLEMENTIRAT KASSNIJE
+      var video = document.querySelector('video');
+      var videoSelect = document.querySelector('#camera');
+      var audioSelect = document.querySelector('#audio-source'); //IMPLEMENTIRAT KASSNIJE
 
       var profilePicCanvas = document.querySelector("#profilePicCanvas");
       var profilePictureOutput = document.querySelector("#profilePictureOutput");
@@ -34,7 +183,7 @@
       var videoTag = document.querySelector("#videoTag");
 
       var width = 240;
-      var height = 0; //Calculated later
+      var height = 0;
       var streaming = false;
 
       takePicButton.addEventListener('click', function (event) {
@@ -45,7 +194,7 @@
         if(!streaming) {
           height = videoTag.videoHeight / (videoTag.videoWidth/width);
           //Firefox has bug
-          if(isNan(height)) {
+          if(isNaN(height)) {
             height = width / (4/3);
           }
           videoTag.setAttribute('width', width);
@@ -120,7 +269,7 @@
 
         function onSuccess(stream) {
           video.srcObject = stream;
-          video.className = "grayscale_filter";
+          //video.className = "grayscale_filter";
           video.onloadedmetadata = function(e) {
             video.play();
           };
