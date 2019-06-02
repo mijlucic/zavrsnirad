@@ -10,14 +10,64 @@
 
     <div>
       Video: <select id="camera"></select>
+      Zvuk: <select id="audio-source"></select>
     </div>
-    <video autoplay></video>
+
+    <p><button id="takeProfile" type="button" autofocus="true">Create a profile picture</button></p>
+    <video id="videoTag" autoplay></video>
+
+    <canvas id="profilePicCanvas" style="display: none;"></canvas>
+    <div>
+      <img id="profilePictureOutput">
+    </div>
 
     <script>
       //Ovdje pocinje sa tutorijala
 
         var video = document.querySelector('video');
         var videoSelect = document.querySelector('#camera');
+        var audioSelect = document.querySelector('#audio-source'); //IMPLEMENTIRAT KASSNIJE
+
+      var profilePicCanvas = document.querySelector("#profilePicCanvas");
+      var profilePictureOutput = document.querySelector("#profilePictureOutput");
+      var takePicButton = document.querySelector("#takeProfile");
+      var videoTag = document.querySelector("#videoTag");
+
+      var width = 240;
+      var height = 0; //Calculated later
+      var streaming = false;
+
+      takePicButton.addEventListener('click', function (event) {
+        takeProfilePic();
+      }, false);
+
+      videoTag.addEventListener('canplay', function (event) {
+        if(!streaming) {
+          height = videoTag.videoHeight / (videoTag.videoWidth/width);
+          //Firefox has bug
+          if(isNan(height)) {
+            height = width / (4/3);
+          }
+          videoTag.setAttribute('width', width);
+          videoTag.setAttribute('height', height);
+          profilePicCanvas.setAttribute('width', width);
+          profilePicCanvas.setAttribute('height', height);
+          streaming = true;
+        }
+      }, false);
+
+      function takeProfilePic() {
+        var context = profilePicCanvas.getContext('2d');
+        if(width && height) {
+          profilePicCanvas.width = width;
+          profilePicCanvas.height = height;
+          context.drawImage(videoTag, 0, 0, width, height);
+
+          var data = profilePicCanvas.toDataURL('image/png');
+          profilePictureOutput.setAttribute('src', data);
+        }
+      }
+
         navigator.mediaDevices.enumerateDevices()
           .then(function (sourceInfos) {
             console.log("Kebg", sourceInfos.length);
@@ -32,7 +82,7 @@
                 videoSelect.appendChild(option);
               }
             }
-          });//(getCameras); //getSources is depraceted
+          }); //getSources is depraceted
 
         videoSelect.onchange = startStream;
 
@@ -41,21 +91,27 @@
         function startStream() {
           navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
           if (navigator.getUserMedia) {
+
+            var videoSource = videoSelect.value;
             var constraints = {
               audio: false,
               video: {
                 //width: 1280,
                 //height: 720,
                 mandatory: { //IZBRISAT NAKNADNIO
-                  maxWidth: 640,
-                  maxHeight: 360,
-                  minWidth: 640,
-                  minHeight: 360
-                }
+                  maxWidth: 240,//640,
+                  maxHeight: 240,//360,
+                  minWidth: 240,//640,
+                  minHeight: 240//360
+                },
+                optional: [{
+                  sourceId: videoSource
+                }]
               }
             };
           } else {
-            console.log("getUserMedia not supported");
+            console.log("getUserMedia is not supported in this browser");
+            //DODATI ALERT
           }
 
           navigator.getUserMedia(constraints, onSuccess, onError);
