@@ -3,51 +3,10 @@
   <head>
     <title><%= title %></title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <!--<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">-->
-    <!--<link rel="icon" href="img/favicon.ico" type="image/x-icon">-->
-    <script language="javascript" src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <% include partials/head %>
   </head>
   <body>
-  <!--[if lte IE 9]>
-  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="nav">
-    <a class="navbar-brand head-text" href="#">
-      <img src="images/logo-head.png" width="50" height="50" class="d-inline-block align-top" alt="Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link head-text" href="index.html" >Početna</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link head-text" href="signal">Web konzultacije</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link head-text">Rezultati testiranja</a>
-        </li>
-      </ul>
-      <div class="form-inline my-2 my-lg-0">
-        <a class="nav-link head-text" href="registracija.php">Registracija</a>
-        <a class="nav-link head-text" href="prijava.php">Prijava</a>
-      </div>
-      <!--<form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pretraži..." aria-label="Search">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pretraži</button>
-      </form>-->
-    </div>
-  </nav>
-  <div style="height: 15px"></div>
+  <% include partials/header %>
 
   <div class="container">
     <!-- <ol class="breadcrumb">
@@ -65,7 +24,7 @@
         <p>Tema rada: Prakse testiranja programskih proizvoda</p>
         <p class="lead">
           <a class="btn btn-primary btn-lg" role="button" href="signal">Pristupite kao PROFESOR</a>
-          <a class="btn btn-secondary btn-lg" role="button" href="signal">Pristupite kao STUDENT</a>
+          <a class="btn btn-secondary btn-lg" role="button" href="record">Pristupite kao STUDENT</a>
         </p>
       </div>
     </div>
@@ -153,26 +112,10 @@
     </div>
   </div>
 
+  <% include partials/footer %>
 
-  <div style="height: 30px"></div>
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <p>Copyright &copy; 2019. Mijo Lučić</p>
-          <p>Fakultet organizacije i informatike Varaždin</p>
-        </div>
-        <div class="col-4">
-          <p>Napomena: Aplikacija je dio istraživačkog dijela završnog rada na temu "Prakse testiranja programskih proizvoda"</p>
-        </div>
-        <div class="col-4">
-          <p>Istraživački dio završnog rada na temu: "Prakse testiranja programskih proizvoda"</p>
-        </div>
-      </div>
-    </div>
-  </footer>
 
-    <script>
+  <script>
       var btnStart = document.querySelector('#startStream');
       btnStart.addEventListener('click', function (event) {
         startStream();

@@ -6,8 +6,7 @@
   <script src="/lib/socket.io.js" type="text/javascript"></script>
 
   <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-  <!--<script src="js/main.js" async></script>-->
-  <script src="../../../js/lib/ga.js"></script>
+  <% include partials/head %>
 
   <!--<script src="/dist/RTCMultiConnection.min.js"></script>-->
   <!--<script src="/node_modules/webrtc-adapter/out/adapter.js"></script>-->
@@ -20,44 +19,54 @@
   <!--<script src="/node_modules/recordrtc/RecordRTC.js"></script>-->
 </head>
 <body>
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+<% include partials/header %>
 
-<div>
-  Video: <select id="camera"></select>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+
+      <div>
+        Video: <select id="camera"></select>
+      </div>
+      <video id="videoTag" autoplay></video>
+
+      <div>
+        <label>Name</label>
+        <input id="name" type="text"/>
+        <label>Message</label>
+        <input id="message" type="text"/>
+        <input id="sendMessage" type="submit">
+        <div id="chatArea">Message output: <br></div>
+      </div>
+
+      <hr>
+
+      <video id="gum" playsinline autoplay muted></video>
+      <video id="recorded" playsinline loop></video>
+
+      <div>
+        <button id="start">Start camera</button>
+        <button id="record" disabled>Start Recording</button>
+        <button id="play" disabled>Play</button>
+        <button id="download" disabled>Download</button>
+      </div>
+
+      <div>
+        <h4>Media Stream Constraints options</h4>
+        <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+      </div>
+
+      <div>
+        <span id="errorMsg"></span>
+      </div>
+
+    </div>
+
+  </div>
 </div>
-<video id="videoTag" autoplay></video>
-
-<div>
-  <label>Name</label>
-  <input id="name" type="text"/>
-  <label>Message</label>
-  <input id="message" type="text"/>
-  <input id="sendMessage" type="submit">
-  <div id="chatArea">Message output: <br></div>
-</div>
-
-<hr>
-
-<video id="gum" playsinline autoplay muted></video>
-<video id="recorded" playsinline loop></video>
-
-<div>
-  <button id="start">Start camera</button>
-  <button id="record" disabled>Start Recording</button>
-  <button id="play" disabled>Play</button>
-  <button id="download" disabled>Download</button>
-</div>
-
-<div>
-  <h4>Media Stream Constraints options</h4>
-  <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
-</div>
-
-<div>
-  <span id="errorMsg"></span>
-</div>
-
+<% include partials/footer %>
 <script>
   //Ovdje pocinje sa tutorijala
 
@@ -65,8 +74,6 @@
   var videoSelect = document.querySelector('#camera');
 
   //Socketio
-
-
 
   var myName = document.querySelector("#name");
   var myMessage = document.querySelector("#message");

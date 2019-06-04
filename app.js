@@ -7,8 +7,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var signalRouter = require('./routes/signal');
-var recordRouter = require('./routes/record');
+var profesorRouter = require('./routes/profesor');
+var studentRouter = require('./routes/student');
 
 var app = express();
 
@@ -28,8 +28,8 @@ app.use(express.static(path.join(__dirname,'public/images/favicon.ico')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/signal', signalRouter);
-app.use('/record', recordRouter);
+app.use('/profesor', profesorRouter);
+app.use('/student', studentRouter);
 
 // ioServer.http().io();
 // ioServer.io.route('ready', function (req) {
