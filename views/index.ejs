@@ -64,8 +64,8 @@
         <hr class="my-4">
         <p>Tema rada: Prakse testiranja programskih proizvoda</p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" role="button" href="screensharing.html">Pristupite kao PROFESOR</a>
-          <a class="btn btn-secondary btn-lg" role="button" href="screensharing.html">Pristupite kao STUDENT</a>
+          <a class="btn btn-primary btn-lg" role="button" href="signal">Pristupite kao PROFESOR</a>
+          <a class="btn btn-secondary btn-lg" role="button" href="signal">Pristupite kao STUDENT</a>
         </p>
       </div>
     </div>
@@ -81,8 +81,9 @@
           <div class="col-6">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Audio stream</h4>
+                <h4 class="card-title">Stream</h4>
                 <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <button id="startStream" type="button">Start stream</button>
                 <div>
                   Video: <select id="camera"></select>
                   Zvuk: <select id="audio-source"></select>
@@ -172,7 +173,10 @@
   </footer>
 
     <script>
-
+      var btnStart = document.querySelector('#startStream');
+      btnStart.addEventListener('click', function (event) {
+        startStream();
+      });
       var video = document.querySelector('video');
       var videoSelect = document.querySelector('#camera');
       var audioSelect = document.querySelector('#audio-source'); //IMPLEMENTIRAT KASSNIJE
@@ -235,7 +239,7 @@
 
         videoSelect.onchange = startStream;
 
-        startStream();
+        //startStream();
 
         function startStream() {
           navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
