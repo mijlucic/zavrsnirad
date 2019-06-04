@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/node_modules/socket.io/'));
-app.use(express.static(__dirname + '/node_modules/socket.io-client/'));
+//app.use(express.static(__dirname + '/node_modules/socket.io-client/'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname,'public/images/favicon.ico')));
@@ -30,7 +30,19 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/profesor', profesorRouter);
 app.use('/student', studentRouter);
+app.use('/users', usersRouter);
 
+//Tutorijali
+var http = require('http').Server(app);
+var io = require(__dirname + '/node_modules/socket.io');
+var iso = io(http);
+iso.on('connection', function(socket){
+  console.log('a user connected');
+});
+
+// http.listen(3000, function(){
+//   console.log('listening on *:3000');
+// });
 // ioServer.http().io();
 // ioServer.io.route('ready', function (req) {
 //   req.io.join(req.data);
