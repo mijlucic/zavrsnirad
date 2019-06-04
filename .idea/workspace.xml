@@ -2,264 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3bf04e4-4a0d-4b9a-a7b0-0c5145a4f442" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/konzultacije.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/videostream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/konzultacije.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/users.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/videostream.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/wscat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/wscat.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/base64id/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/base64id/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/base64id/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/base64id/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/History.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/socket.io-client/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/bin/builder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/component-bind/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/component-bind/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/component-emitter/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/component-emitter/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/component-json-fallback/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/component-json-fallback/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/component-json/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/component-json/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/emitter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/parser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/socket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/transport.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/transports/flashsocket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/transports/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/transports/polling-jsonp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/transports/polling-xhr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/transports/polling.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/transports/websocket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-engine.io-client/lib/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-socket.io-protocol/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/learnboost-socket.io-protocol/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/timoxley-to-array/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/timoxley-to-array/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/visionmedia-debug/component.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/visionmedia-debug/debug.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/components/visionmedia-debug/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/dist/WebSocketMain.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/dist/WebSocketMainInsecure.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/dist/socket.io.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/socket.io-client/dist/socket.io.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/dist/socket.io.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/events.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/io.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/json.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/namespace.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/parser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/socket.io-client/lib/socket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/transport.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/transports/flashsocket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/transports/htmlfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/transports/jsonp-polling.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/transports/websocket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/transports/xhr-polling.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/transports/xhr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/WebSocketMain.swf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/WebSocketMainInsecure.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/IWebSocketLogger.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/WebSocket.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/WebSocketEvent.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/WebSocketMain.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/WebSocketMainInsecure.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/build.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/adobe/net/proxies/RFC2817Socket.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/gsolo/encryption/MD5.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/Crypto.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/MozillaRootCertificates.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509Certificate.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/cert/X509CertificateCollection.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/HMAC.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHMAC.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/IHash.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MAC.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD2.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/MD5.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA1.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA224.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHA256.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/hash/SHABase.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/ARC4.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/IPRNG.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/Random.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/prng/TLSPRF.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/rsa/RSAKey.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/AESKey.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/BlowFishKey.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CBCMode.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFB8Mode.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CFBMode.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/CTRMode.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/DESKey.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ECBMode.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ICipher.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IMode.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IPad.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IStreamCipher.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/ISymmetricKey.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/IVMode.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/NullPad.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/OFBMode.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/PKCS5.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SSLPad.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/SimpleIVMode.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TLSPad.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/TripleDESKey.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/XTeaKey.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/aeskey.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/symmetric/dump.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/AESKeyTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ARC4Test.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BigIntegerTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/BlowFishKeyTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CBCModeTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFB8ModeTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CFBModeTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/CTRModeTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/DESKeyTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ECBModeTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/HMACTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/ITestHarness.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD2Test.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/MD5Test.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/OFBModeTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/RSAKeyTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA1Test.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA224Test.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/SHA256Test.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TLSPRFTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TestCase.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/TripleDESKeyTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tests/XTeaKeyTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/BulkCiphers.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/CipherSuites.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/IConnectionState.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/ISecurityParameters.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/KeyExchanges.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/MACs.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLConnectionState.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLEvent.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/SSLSecurityParameters.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConfig.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSConnectionState.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEngine.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSError.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSEvent.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSecurityParameters.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocket.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSSocketEvent.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/crypto/tls/TLSTest.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/BarrettReduction.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/BigInteger.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/ClassicReduction.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/IReduction.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/MontgomeryReduction.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/NullReduction.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/math/bi_internal.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/ArrayUtil.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Base64.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Hex.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/Memory.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ByteString.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/DER.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/IAsn1Type.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Integer.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/OID.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/ObjectIdentifier.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PEM.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/PrintableString.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Sequence.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Set.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/Type.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/flash-src/com/hurlant/util/der/UTCTime.as" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/sample.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/swfobject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/lib/vendor/web-socket-js/web_socket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/socket.io-client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/test/events.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/test/io.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/test/node/builder.common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/test/node/builder.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/test/parser.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/test/socket.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/test/util.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io-client/test/worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/History.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/socket.io/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/socket.io/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/benchmarks/decode.bench.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/benchmarks/encode.bench.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/benchmarks/runner.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/logger.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/manager.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/namespace.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/socket.io/lib/namespace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/parser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/socket.io.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/socket.io/lib/socket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/static.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/stores/memory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/stores/redis.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transport.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/flashsocket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/htmlfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/http-polling.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/http.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/jsonp-polling.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/websocket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/websocket/default.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/websocket/hybi-07-12.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/websocket/hybi-16.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/websocket/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/transports/xhr-polling.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/lib/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/socket.io/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/socket.io/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/History.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ws/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/bin/wscat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/binding.gyp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ws/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/BufferPool.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/BufferUtil.fallback.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/BufferUtil.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/ErrorCodes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/Receiver.hixie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/Receiver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ws/lib/Receiver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/Sender.hixie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/Sender.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ws/lib/Sender.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/Validation.fallback.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/Validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ws/lib/Validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/WebSocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ws/lib/WebSocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/WebSocketServer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/lib/browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/node_modules/commander/Readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/node_modules/commander/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/node_modules/commander/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/ws/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/src/bufferutil.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ws/src/validation.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/users.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -281,38 +26,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/profesor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/users.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/partials/head.ejs">
+        <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="68">
+              <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -334,6 +61,9 @@
       <find>signalRouter</find>
       <find>getUserMedia</find>
       <find>mport</find>
+      <find>io(</find>
+      <find>io</find>
+      <find>function io</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -366,8 +96,8 @@
         <option value="$PROJECT_DIR$/views/student.ejs" />
         <option value="$PROJECT_DIR$/routes/konzultacije.js" />
         <option value="$PROJECT_DIR$/routes/videostream.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/users.ejs" />
       </list>
     </option>
@@ -400,14 +130,14 @@
               <item name="zavrsnirad" type="b2602c69:ProjectViewProjectNode" />
               <item name="zavrsnirad" type="462c0819:PsiDirectoryNode" />
               <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="socket.io" type="462c0819:PsiDirectoryNode" />
+              <item name="socket.io-client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zavrsnirad" type="b2602c69:ProjectViewProjectNode" />
               <item name="zavrsnirad" type="462c0819:PsiDirectoryNode" />
               <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="socket.io" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="socket.io-client" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zavrsnirad" type="b2602c69:ProjectViewProjectNode" />
@@ -488,12 +218,12 @@
       <updated>1558296488605</updated>
       <workItem from="1558296499047" duration="8000" />
       <workItem from="1559473243229" duration="47901000" />
-      <workItem from="1559668351901" duration="575000" />
+      <workItem from="1559668351901" duration="1609000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48484000" />
+    <option name="totallyTimeSpent" value="49518000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -632,13 +362,6 @@
     <entry file="file://$PROJECT_DIR$/views/videostream.ejs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="257" selection-start-line="257" selection-end-line="257" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/partials/head.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -667,17 +390,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/users.ejs">
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/Readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/lib/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+        <state relative-caret-position="224">
+          <caret line="257" selection-start-line="257" selection-end-line="257" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/lib/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io-adapter/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="71" column="18" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/lib/namespace.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/lib/socket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+        <state relative-caret-position="68">
+          <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/users.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
         </state>
       </provider>
     </entry>

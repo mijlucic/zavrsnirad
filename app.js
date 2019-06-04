@@ -20,8 +20,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
-app.use(express.static(__dirname + '/node_modules/socket.io/'));
-//app.use(express.static(__dirname + '/node_modules/socket.io-client/'));
+app.use(express.static(__dirname + '/node_modules/socket.io-client/dist'));
+app.use(express.static(__dirname + '/node_modules/socket.io/dist'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname,'public/images/favicon.ico')));
@@ -32,27 +32,6 @@ app.use('/profesor', profesorRouter);
 app.use('/student', studentRouter);
 app.use('/users', usersRouter);
 
-//Tutorijali
-var http = require('http').Server(app);
-var io = require(__dirname + '/node_modules/socket.io');
-var iso = io(http);
-iso.on('connection', function(socket){
-  console.log('a user connected');
-});
-
-// http.listen(3000, function(){
-//   console.log('listening on *:3000');
-// });
-// ioServer.http().io();
-// ioServer.io.route('ready', function (req) {
-//   req.io.join(req.data);
-//   ioServer.io.room(req.data).broadcast('announce', {
-//     message: 'New client in the ' + req.data + ' room.'
-//   });
-// });
-// ioServer.io.on('connection', function(socket){
-//     console.log('a user connected');
-// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -71,3 +50,18 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+//Tutorijali
+var http = require('http').Server(app);
+var io = require(__dirname + '/node_modules/socket.io-client');
+var iso = io(http);
+iso.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+});
+
+// http.listen(3000, function(){
+//   console.log('listening on *:3000');
+// });
