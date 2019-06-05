@@ -5,12 +5,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var profesorRouter = require('./routes/profesor');
 var studentRouter = require('./routes/student');
+var konzultacijeRouter = require('./routes/konzultacije');
 
 var app = express();
+var http = require('http').Server(app);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/node_modules/socket.io-client/dist'));
-app.use(express.static(__dirname + '/node_modules/socket.io/dist'));
+//app.use(express.static(__dirname + '/node_modules/socket.io/dist'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname,'public/images/favicon.ico')));
@@ -31,7 +34,23 @@ app.use('/users', usersRouter);
 app.use('/profesor', profesorRouter);
 app.use('/student', studentRouter);
 app.use('/users', usersRouter);
+app.use('/konzultacije', konzultacijeRouter);
 
+
+//var io = require('socket.io');
+var io = require('socket.io')(http);
+
+//var iso = io(http);
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
+});
+
+// http.listen(3000, function(){
+//   console.log('listening on *:3000');
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -52,16 +71,5 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 //Tutorijali
-var http = require('http').Server(app);
-var io = require(__dirname + '/node_modules/socket.io-client');
-var iso = io(http);
-iso.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('disconnect', function(){
-    console.log('user disconnected');
-  });
-});
 
-// http.listen(3000, function(){
-//   console.log('listening on *:3000');
-// });
+

@@ -4,6 +4,133 @@
     <list default="true" id="b3bf04e4-4a0d-4b9a-a7b0-0c5145a4f442" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/cache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/connect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/basicAuth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/bodyParser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/compress.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/cookieParser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/cookieSession.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/csrf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/directory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/errorHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/favicon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/json.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/limit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/logger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/multipart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/query.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/responseTime.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/session.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/session/cookie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/session/memory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/session/session.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/session/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/static.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/staticCache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/timeout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/urlencoded.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/middleware/vhost.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/patch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/proto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/directory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/folder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_attach.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_excel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_find.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_gear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_go.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_lightning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_link.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_paintbrush.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_paste.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_save.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_acrobat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_actionscript.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_camera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_cd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_code.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_code_red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_coldfusion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_compressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_cplusplus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_csharp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_cup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_database.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_dvd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_excel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_find.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_flash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_freehand.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_gear.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_get.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_go.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_h.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_key.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_lightning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_link.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_magnify.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_medal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_office.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_paint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_paintbrush.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_paste.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_php.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_picture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_powerpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_put.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_ruby.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_stack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_star.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_swoosh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_text.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_text_width.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_tux.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_vector.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_visualstudio.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_width.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_word.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_world.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_wrench.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_white_zip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_word.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/icons/page_world.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/public/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/lib/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/node_modules/express/node_modules/connect/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express.io/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express.io/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/konzultacije.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/konzultacije.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/konzultacije.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/konzultacije.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/users.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/users.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,7 +144,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
@@ -26,11 +153,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/users.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+            <state relative-caret-position="493">
+              <caret line="53" column="6" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -38,8 +165,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
+            <state relative-caret-position="156">
+              <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -94,11 +221,12 @@
         <option value="$PROJECT_DIR$/views/partials/header.ejs" />
         <option value="$PROJECT_DIR$/public/stylesheets/main.css" />
         <option value="$PROJECT_DIR$/views/student.ejs" />
-        <option value="$PROJECT_DIR$/routes/konzultacije.js" />
         <option value="$PROJECT_DIR$/routes/videostream.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
-        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/konzultacije.ejs" />
+        <option value="$PROJECT_DIR$/routes/konzultacije.js" />
         <option value="$PROJECT_DIR$/views/users.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -124,31 +252,7 @@
             <path>
               <item name="zavrsnirad" type="b2602c69:ProjectViewProjectNode" />
               <item name="zavrsnirad" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zavrsnirad" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zavrsnirad" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="socket.io-client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zavrsnirad" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zavrsnirad" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="socket.io-client" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zavrsnirad" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zavrsnirad" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zavrsnirad" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zavrsnirad" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zavrsnirad" type="b2602c69:ProjectViewProjectNode" />
@@ -218,32 +322,31 @@
       <updated>1558296488605</updated>
       <workItem from="1558296499047" duration="8000" />
       <workItem from="1559473243229" duration="47901000" />
-      <workItem from="1559668351901" duration="1609000" />
+      <workItem from="1559668351901" duration="6306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49518000" />
+    <option name="totallyTimeSpent" value="54215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19599578" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17017913" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49789253" visible="true" weight="0.22222222" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49683878" visible="true" weight="0.22222222" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5021075" side_tool="true" visible="true" weight="0.22222222" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49947312" weight="0.3288889" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50316125" side_tool="true" visible="true" weight="0.22222222" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49894625" weight="0.3288889" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -332,13 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/konzultacije.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/videostream.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -356,9 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/konzultacije.ejs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/videostream.ejs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -369,24 +462,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/profesor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77">
           <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -429,17 +508,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/express.io/node_modules/coffee-script/lib/coffee-script/coffee-script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="71" selection-start-line="22" selection-start-column="71" selection-end-line="22" selection-end-column="71" />
+        <state relative-caret-position="224">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express.io/lib/index.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/konzultacije.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/konzultacije.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="27" column="10" lean-forward="true" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/users.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        <state relative-caret-position="493">
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
         </state>
       </provider>
     </entry>

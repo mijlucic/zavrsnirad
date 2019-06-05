@@ -1,40 +1,48 @@
 var express = require('express');
-// var http = require('http').Server(app);
-var ioServer = require('socket.io');
+
+// var app = express();
+// app.http().io();
+// var PORT = 3000;
+// console.log('server started on port ' + PORT);
+//
+// app.use(express.static(__dirname + '/public'));
+//
+// app.get('/', function(req, res){
+//     res.render('konzultacije', { title: 'Video konzultacije' });
+// });
+//
+// app.listen(PORT);
+//
+// app.io.route('ready', function(req) {
+//     req.io.join(req.data.chat_room);
+//     req.io.join(req.data.signal_room);
+//     app.io.room(req.data).broadcast('announce', {
+//         message: 'New client in the ' + req.data + ' room.'
+//     })
+// })
+//
+// app.io.route('send', function(req) {
+//     app.io.room(req.data.room).broadcast('message', {
+//         message: req.data.message,
+//         author: req.data.author
+//     });
+// })
+//
+// app.io.route('signal', function(req) {
+//     //Note the use of req here for broadcasting so only the sender doesn't receive their own messages
+//     req.io.room(req.data.room).broadcast('signaling_message', {
+//         type: req.data.type,
+//         message: req.data.message
+//     });
+// })
+
+
 
 var router = express.Router();
-// var app = expressio();
-// app.http().io();
-// var io = require('socket.io')(express);
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
     res.render('konzultacije', { title: 'Video konzultacije' });
 });
 
 
 module.exports = router;
-
-// io.on('connection', function(socket){
-//     console.log('a user connected');
-// });
-
-// http.listen(3000, function(){
-//     console.log('listening on *:3000');
-// });
-//
-// ioServer(express).on('connection', function(socket) {
-//     RTCMultiConnectionServer.addSocket(socket, config);
-//
-//     // ----------------------
-//     // below code is optional
-//
-//     const params = socket.handshake.query;
-//
-//     if (!params.socketCustomEvent) {
-//         params.socketCustomEvent = 'custom-message';
-//     }
-//
-//     socket.on(params.socketCustomEvent, function(message) {
-//         socket.broadcast.emit(params.socketCustomEvent, message);
-//     });
-// });
