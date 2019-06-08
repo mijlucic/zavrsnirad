@@ -9,103 +9,51 @@
   <% include partials/header %>
 
   <div class="container">
-    <!-- <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item"><a href="#">Library</a></li>
-      <li class="breadcrumb-item active">Data</li>
-    </ol> -->
     <div class="jumbotron">
       <img src="images/logo-stre.png" style="float: left; display: inline;">
       <div style="text-align: right; display: inline;">
-        <h1 class="display-3">Web konzultacije</h1>
-        <h1><%= title %></h1>
-        <p class="lead">Multi-streaming platforma za jednostavnu i brzu komunikaciju profesora i studenata</p>
+        <h1 class="display-3">SVEA</h1>
+        <p class="lead">Snimajte video, ekran ili zvuk pomoću multimedijalne aplikacije</p>
         <hr class="my-4">
-        <p>Tema rada: Prakse testiranja programskih proizvoda</p>
+        <p>Sve što vam treba je web kamera i mikrofon.</p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" role="button" href="signal">Pristupite kao PROFESOR</a>
-          <a class="btn btn-secondary btn-lg" role="button" href="record">Pristupite kao STUDENT</a>
+          <a class="btn btn-primary btn-lg" href="profesor">Snimanje videa i zvuka</a>
+          <a class="btn btn-secondary btn-lg" href="snimanjeekrana">Snimanje ekrana</a>
         </p>
       </div>
     </div>
     <div class="row">
-      <div class="col-8">
-        <div class="row">
-          <div class="col-6">
-            <blockquote class="blockquote text-center">
-              <p class="mb-0"> “You can see a lot by just looking.”</p>
-              <footer class="blockquote-footer"><cite title="Source Title">Yogi Berra</cite></footer>
-            </blockquote>
-          </div>
-          <div class="col-6">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Stream</h4>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <button id="startStream" type="button">Start stream</button>
-                <div>
-                  Video: <select id="camera"></select>
-                  Zvuk: <select id="audio-source"></select>
-                </div>
-
-                <p><button id="takeProfile" type="button" autofocus="true">Create a profile picture</button></p>
-                <video id="videoTag" autoplay></video>
-
-                <canvas id="profilePicCanvas" style="display: none;"></canvas>
-                <div>
-                  <img id="profilePictureOutput">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-12">
         <div class="row">
           <div class="col-6">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Video stream</h4>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <h4 class="card-title">Video snimanje</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Potrebna web kamera</h6>
+                <p class="card-text">Nudimo Vam jednostavno online snimanje putem web kamere. Možete birati kameru, zvuk, rezoluciju i dr.</p>
+                <a href="videosnimanje" class="card-link">Pokrenite</a>
               </div>
             </div>
           </div>
           <div class="col-6">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Peer-to-peer</h4>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <h4 class="card-title">Snimanje ekrana</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Jednostavno korištenje</h6>
+                <p class="card-text">Nudimo Vam jednostavno snimanje rada Vašeg ekrana.</p><br>
+                <a href="snimanjeekrana" class="card-link">Pokrenite</a>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card mb-3">
-          <h3 class="card-header">Multimedia</h3>
-          <div class="card-body">
-            <h5 class="card-title">WebRTC</h5>
-            <h6 class="card-subtitle text-muted">Real-Time Communications</h6>
-          </div>
-          <img style="height: 200px; width: 100%; display: block;" src="images/webrtc-diagram.png" alt="Card image">
-          <div class="card-body">
-            <p class="card-text">WebRTC is a free, open project that provides browsers and mobile applications with Real-Time Communications (RTC) capabilities via simple APIs. The WebRTC components have been optimized to best serve this purpose.</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-          </div>
-          <div class="card-footer text-muted">
-            2 days ago
+          <!--<div class="col-4">-->
+            <!--<div class="card">-->
+              <!--<div class="card-body">-->
+                <!--<h4 class="card-title">Snimanje zvuka</h4>-->
+                <!--<h6 class="card-subtitle mb-2 text-muted">Potreban mikrofon</h6>-->
+                <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                <!--<a href="#" class="card-link">Card link</a>-->
+              <!--</div>-->
+            <!--</div>-->
           </div>
         </div>
       </div>
@@ -114,119 +62,5 @@
 
   <% include partials/footer %>
 
-
-  <script>
-      var btnStart = document.querySelector('#startStream');
-      btnStart.addEventListener('click', function (event) {
-        startStream();
-      });
-      var video = document.querySelector('video');
-      var videoSelect = document.querySelector('#camera');
-      var audioSelect = document.querySelector('#audio-source'); //IMPLEMENTIRAT KASSNIJE
-
-      var profilePicCanvas = document.querySelector("#profilePicCanvas");
-      var profilePictureOutput = document.querySelector("#profilePictureOutput");
-      var takePicButton = document.querySelector("#takeProfile");
-      var videoTag = document.querySelector("#videoTag");
-
-      var width = 240;
-      var height = 0;
-      var streaming = false;
-
-      takePicButton.addEventListener('click', function (event) {
-        takeProfilePic();
-      }, false);
-
-      videoTag.addEventListener('canplay', function (event) {
-        if(!streaming) {
-          height = videoTag.videoHeight / (videoTag.videoWidth/width);
-          //Firefox has bug
-          if(isNaN(height)) {
-            height = width / (4/3);
-          }
-          videoTag.setAttribute('width', width);
-          videoTag.setAttribute('height', height);
-          profilePicCanvas.setAttribute('width', width);
-          profilePicCanvas.setAttribute('height', height);
-          streaming = true;
-        }
-      }, false);
-
-      function takeProfilePic() {
-        var context = profilePicCanvas.getContext('2d');
-        if(width && height) {
-          profilePicCanvas.width = width;
-          profilePicCanvas.height = height;
-          context.drawImage(videoTag, 0, 0, width, height);
-
-          var data = profilePicCanvas.toDataURL('image/png');
-          profilePictureOutput.setAttribute('src', data);
-        }
-      }
-
-        navigator.mediaDevices.enumerateDevices()
-          .then(function (sourceInfos) {
-            console.log("Kebg", sourceInfos.length);
-            for(var i=0; i !== sourceInfos.length; ++i) {
-              var sourceInfo = sourceInfos[i];
-              console.log("fsadf", sourceInfos[i])
-              var option = document.createElement('option');
-              option.value = sourceInfo.id;
-              if(sourceInfo.kind === 'videoinput') {
-                console.log("Bil osta", sourceInfo);
-                option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
-                videoSelect.appendChild(option);
-              }
-            }
-          }); //getSources is depraceted
-
-        videoSelect.onchange = startStream;
-
-        //startStream();
-
-        function startStream() {
-          navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-          if (navigator.getUserMedia) {
-
-            var videoSource = videoSelect.value;
-            var constraints = {
-              audio: false,
-              video: {
-                //width: 1280,
-                //height: 720,
-                mandatory: { //IZBRISAT NAKNADNIO
-                  maxWidth: 240,//640,
-                  maxHeight: 240,//360,
-                  minWidth: 240,//640,
-                  minHeight: 240//360
-                },
-                optional: [{
-                  sourceId: videoSource
-                }]
-              }
-            };
-          } else {
-            console.log("getUserMedia is not supported in this browser");
-            //DODATI ALERT
-          }
-
-          navigator.getUserMedia(constraints, onSuccess, onError);
-
-        }
-
-        function onSuccess(stream) {
-          video.srcObject = stream;
-          //video.className = "grayscale_filter";
-          video.onloadedmetadata = function(e) {
-            video.play();
-          };
-        }
-        function onError(err) {
-          console.log("The following error occurred: " + err.name);
-        }
-
-
-
-    </script>
   </body>
 </html>

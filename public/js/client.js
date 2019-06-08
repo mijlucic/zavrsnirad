@@ -1,4 +1,4 @@
-var SIGNALING_SERVER = 'http://localhost:3000/';
+var SIGNALING_SERVER = 'http://localhost:3000';
 // To create a new connection to the signaling server
 socket = io.connect(SIGNALING_SERVER);
 socket.on('connect', function () {
@@ -21,8 +21,7 @@ socket.on('disconnect', function () {
         username: loggedInUser.username
     });
 });
-...
-...
+
 // To keep track of online users
 socket_client.on('onlineUsers', function (onlineUsers) {
     $.each(onlineUsers, function (n, user) {

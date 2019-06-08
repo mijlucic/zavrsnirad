@@ -8,7 +8,7 @@ var router = express.Router();
 // var io = require('socket.io')(express);
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('profesor', { title: 'Profesor' });
+    res.render('videosnimanje', { title: 'Snimanje videa i zvuka' });
 });
 
 
