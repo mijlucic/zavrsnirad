@@ -3,6 +3,7 @@
 <head>
   <title><%= title %> - SVEA</title>
   <% include partials/head %>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 
   <style>
     div.select {
@@ -36,7 +37,7 @@
     <div class="col-8">
       <!--<video id="video" playsinline autoplay></video>-->
       <div>
-        <button id="start" type="button" class="btn btn-success">Pokrenite kameru</button>
+        <button hidden id="start" type="button" class="btn btn-success">Pokrenite kameru</button>
         <button id="record" disabled class="btn btn-danger">Pokrenite snimanje</button>
         <button id="play" disabled class="btn btn-primary">Pokreni video</button>
         <button id="download" disabled class="btn btn-secondary">Preuzmi video</button>
@@ -68,25 +69,28 @@
       </div>
 
       <h4>Odaberite rezoluciju:</h4>
-      <div id="buttons">
-        <button id="qvga">QVGA</button>
-        <button id="vga">VGA</button>
-        <button id="hd">HD</button>
-        <button id="full-hd">Full HD</button>
-        <button id="fourK">4K</button>
-        <button id="eightK">8K</button>
+      <hr>
+      <div id="buttons" class="m-2">
+        <button id="qvga" class="btn btn-outline-primary">QVGA</button>
+        <button id="vga" class="btn btn-outline-primary">VGA</button>
+        <button id="hd" class="btn btn-outline-primary">HD</button>
+        <button id="full-hd" class="btn btn-outline-primary">Full HD</button>
+        <button id="fourK" class="btn btn-outline-primary">4K</button>
       </div>
 
-      <div id="videoblock">
-        <div id="width">
+      <div id="videoblock" class="m-2">
+        <div id="width" hidden>
           <label>Width <span></span>px:</label>
           <input type="range" min="0" max="7680" value="0">
         </div>
-        <input id="sizelock" type="checkbox">Lock video size<br>
-        <input id="aspectlock" type="checkbox">Lock aspect ratio<br>
+        <!--<input id="sizelock" type="checkbox">Lock video size<br>-->
+        <!--<input id="aspectlock" type="checkbox">Lock aspect ratio<br>-->
       </div>
       <hr>
       <p class="pt-2" id="errormessage"></p>
+      <div>
+        <span id="errorMsg"></span>
+      </div>
     </div>
   </div>
 </div>
@@ -94,7 +98,6 @@
 
 <script type="text/javascript" async>
 
-  ////////////////////////// Record, play i download
   const mediaSource = new MediaSource();
   mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
   let mediaRecorder;
@@ -106,12 +109,14 @@
   const recordButton = document.querySelector('button#record');
   const startStopButton = document.querySelector('button#start');
   recordButton.addEventListener('click', () => {
-    if (recordButton.textContent === 'Start Recording') {
+    if (recordButton.textContent === 'Pokrenite snimanje') {
       startRecording();
+      //startStopButton.textContent = 'Zaustavi kameru';
+      // var track = mediaSource.getTracks()[0];
+      // track.stop();
     } else {
       stopRecording();
-      startStopButton.textContent = 'Zaustavi';
-      recordButton.textContent = 'Start Recording';
+      recordButton.textContent = 'Pokrenite snimanje';
       playButton.disabled = false;
       downloadButton.disabled = false;
     }
@@ -134,7 +139,7 @@
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = 'test.webm';
+    a.download = 'video_SVEA.webm';
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {
@@ -183,7 +188,8 @@
     }
 
     console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
-    recordButton.textContent = 'Stop Recording';
+    recordButton.textContent = 'Zaustavi snimanje';
+    startStopButton.hidden = true;
     playButton.disabled = true;
     downloadButton.disabled = true;
     mediaRecorder.onstop = (event) => {
@@ -218,24 +224,41 @@
     }
   }
 
+  async function onLoadPage() {
+    const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
+    const constraints = {
+      audio: {
+        echoCancellation: {exact: hasEchoCancellation}
+      },
+      video: {
+        width: 1280, height: 720
+      }
+    };
+    console.log('Using media constraints:', constraints);
+    await init(constraints);
+    const startStopButtons = document.getElementById('#start');
+    // console.log("Butto nstart", startStopButtons);
+    start();
+  }
   document.querySelector('button#start').addEventListener('click', async () => {
-    // const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
-    // const constraints = {
-    //   audio: {
-    //     echoCancellation: {exact: hasEchoCancellation}
-    //   },
-    //   video: {
-    //     width: 1280, height: 720
-    //   }
-    // };
-    // console.log('Using media constraints:', constraints);
-    // await init(constraints);
-    // const startStopButtons = document.getElementById('#start');
+    const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
+    const constraints = {
+      audio: {
+        echoCancellation: {exact: hasEchoCancellation}
+      },
+      video: {
+        width: 1280, height: 720
+      }
+    };
+    console.log('Using media constraints:', constraints);
+    await init(constraints);
+    const startStopButtons = document.getElementById('#start');
     // console.log("Butto nstart", startStopButtons);
     start();
   });
 
-  /////////////////////////// FHD HD, 4K
+
+
   const dimensions = document.querySelector('#dimensions');
   const video = document.querySelector('video');
   let stream;
@@ -245,15 +268,15 @@
   const hdButton = document.querySelector('#hd');
   const fullHdButton = document.querySelector('#full-hd');
   const fourKButton = document.querySelector('#fourK');
-  const eightKButton = document.querySelector('#eightK');
+  //const eightKButton = document.querySelector('#eightK');
 
-  const videoblock = document.querySelector('#videoblock');
+  //const videoblock = document.querySelector('#videoblock');
   const messagebox = document.querySelector('#errormessage');
 
   const widthInput = document.querySelector('div#width input');
   const widthOutput = document.querySelector('div#width span');
-  const aspectLock = document.querySelector('#aspectlock');
-  const sizeLock = document.querySelector('#sizelock');
+  //const aspectLock = document.querySelector('#aspectlock');
+  //const sizeLock = document.querySelector('#sizelock');
 
   let currentWidth = 0;
   let currentHeight = 0;
@@ -278,10 +301,6 @@
     getMedia(fourKConstraints);
   };
 
-  eightKButton.onclick = () => {
-    getMedia(eightKConstraints);
-  };
-
   const qvgaConstraints = {
     video: {width: {exact: 320}, height: {exact: 240}}
   };
@@ -302,9 +321,6 @@
     video: {width: {exact: 4096}, height: {exact: 2160}}
   };
 
-  const eightKConstraints = {
-    video: {width: {exact: 7680}, height: {exact: 4320}}
-  };
 
   function gotStream(mediaStream) {
     stream = window.stream = mediaStream; // stream available to console
@@ -334,66 +350,66 @@
     messagebox.style.display = 'none';
   }
 
-  // function displayVideoDimensions(whereSeen) {
-  //   if (video.videoWidth) {
-  //     //dimensions.innerText = 'Actual video dimensions: ' + video.videoWidth +
-  //             'x' + video.videoHeight + 'px.';
-  //     if (currentWidth !== video.videoWidth
-  //             || currentHeight !== video.videoHeight) {
-  //       console.log(whereSeen + ': ' + dimensions.innerText);
-  //       currentWidth = video.videoWidth;
-  //       currentHeight = video.videoHeight;
-  //     }
-  //   } else {
-  //     //dimensions.innerText = 'Video not ready';
-  //   }
-  // }
-  //
-  // video.onloadedmetadata = () => {
-  //   displayVideoDimensions('loadedmetadata');
-  // };
-  //
-  // video.onresize = () => {
-  //   displayVideoDimensions('resize');
-  // };
+  function displayVideoDimensions(whereSeen) {
+    if (video.videoWidth) {
+      //dimensions.innerText = 'Actual video dimensions: ' + video.videoWidth +
+              'x' + video.videoHeight + 'px.';
+      if (currentWidth !== video.videoWidth
+              || currentHeight !== video.videoHeight) {
+        //console.log(whereSeen + ': ' + dimensions.innerText);
+        currentWidth = video.videoWidth;
+        currentHeight = video.videoHeight;
+      }
+    } else {
+      //dimensions.innerText = 'Video not ready';
+    }
+  }
+
+  video.onloadedmetadata = () => {
+    displayVideoDimensions('loadedmetadata');
+  };
+
+  video.onresize = () => {
+    displayVideoDimensions('resize');
+  };
 
   function constraintChange(e) {
     widthOutput.textContent = e.target.value;
     let track = window.stream.getVideoTracks()[0];
     let constraints;
-    if (aspectLock.checked) {
-      constraints = {
-        width: {exact: e.target.value},
-        aspectRatio: {
-          exact: video.videoWidth / video.videoHeight
-        }
-      };
-    } else {
+    // if (aspectLock.checked) {
+    //   constraints = {
+    //     width: {exact: e.target.value},
+    //     aspectRatio: {
+    //       exact: video.videoWidth / video.videoHeight
+    //     }
+    //   };
+    // } else {
       constraints = {width: {exact: e.target.value}};
-    }
+    //}
     clearErrorMessage();
     console.log('applying ' + JSON.stringify(constraints));
     track.applyConstraints(constraints)
             .then(() => {
-              console.log('applyConstraint success');
-              displayVideoDimensions('applyConstraints');
+              //console.log('applyConstraint success');
+              //displayVideoDimensions('applyConstraints');
             })
             .catch(err => {
-              errorMessage('applyConstraints', err.name);
+              //errorMessage('applyConstraints', err.name);
             });
   }
 
   widthInput.onchange = constraintChange;
 
-  sizeLock.onchange = () => {
-    if (sizeLock.checked) {
-      console.log('Setting fixed size');
-      video.style.width = '100%';
-    } else {
-      console.log('Setting auto size');
-      video.style.width = 'auto';
-    }
-  };
+  // sizeLock.onchange = () => {
+  //   if (sizeLock.checked) {
+  //     console.log('Setting fixed size');
+  //     video.style.width = '100%';
+  //   } else {
+  //     console.log('Setting auto size');
+  //     video.style.width = 'auto';
+  //   }
+  // };
 
   function getMedia(constraints) {
     if (stream) {
@@ -411,8 +427,6 @@
             });
   }
 
-  ///////////////// Choose devices
-  const videoElement = document.querySelector('video');
   const audioInputSelect = document.querySelector('select#audioSource');
   const audioOutputSelect = document.querySelector('select#audioOutput');
   const videoSelect = document.querySelector('select#videoSource');
@@ -477,12 +491,12 @@
 
   function changeAudioDestination() {
     const audioDestination = audioOutputSelect.value;
-    attachSinkId(videoElement, audioDestination);
+    attachSinkId(video, audioDestination);
   }
 
   function gotStream(stream) {
     window.stream = stream; // make stream available to console
-    videoElement.srcObject = stream;
+    video.srcObject = stream;
     // Refresh button list in case labels have become available
     return navigator.mediaDevices.enumerateDevices();
   }
@@ -511,7 +525,7 @@
 
   videoSelect.onchange = start;
 
-  start();
+  onLoadPage();  //start();
 </script>
 </body>
 </html>
