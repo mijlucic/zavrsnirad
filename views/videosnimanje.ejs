@@ -7,13 +7,11 @@
   <style>
     div.select {
       display: inline-block;
-      margin: 0 0 1em 0;
     }
     p.small {
       font-size: 0.7em;
     }
     label {
-      width: 12em;
       display: inline-block;
     }
   </style>
@@ -24,12 +22,19 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1><%= title %></h1>
-      <h4 id="odobrite">Prije svega odobrite snimanje zvuka i videa na vašem pregledniku</h4>
+      <h1 class="mt-4"><%= title %></h1>
+      <hr>
 
-      <video id="gum" playsinline autoplay></video>
-      <video id="recorded" playsinline loop></video>
-
+      <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4 class="alert-heading">Upozorenje!</h4>
+        <p class="mb-0" id="odobrite">Odobrite snimanje zvuka i videa na vašem pregledniku.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <!--<video id="video" playsinline autoplay></video>-->
       <div>
         <button id="start" type="button" class="btn btn-success">Pokrenite kameru</button>
         <button id="record" disabled class="btn btn-danger">Pokrenite snimanje</button>
@@ -37,52 +42,32 @@
         <button id="download" disabled class="btn btn-secondary">Preuzmi video</button>
       </div>
 
-      <div>
-        <h4>Odaberite opciju</h4>
-        <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+      <div class="m-3">
+        <video id="gum" playsinline autoplay></video>
+        <video id="recorded" playsinline loop></video>
       </div>
 
-      <div>
-        <span id="errorMsg"></span>
-      </div>
+    </div>
 
+    <div class="col-4">
+      <h3>Postavke videa</h3>
       <hr>
 
       <div class="select">
-        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+        <label for="audioSource">Odaberite mikrofon: </label><select id="audioSource"></select>
       </div>
-
       <div class="select">
-        <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+        <label for="audioOutput">Odaberite zvučnik za reprodukciju: </label><select id="audioOutput"></select>
       </div>
-
       <div class="select">
-        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+        <label for="videoSource">Odaberite web kameru: </label><select id="videoSource"></select>
       </div>
 
-      <video id="video" playsinline autoplay></video>
-
-      <hr>
-
-      <video id="gum" playsinline autoplay muted></video>
-      <video id="recorded" playsinline loop></video>
-
-      <div>
-        <button id="start">Start camera</button>
-        <button id="record" disabled>Start Recording</button>
-        <button id="play" disabled>Play</button>
-        <button id="download" disabled>Download</button>
+      <div class="m-2">
+        <p>Isključite echo: <input type="checkbox" id="echoCancellation"></p>
       </div>
 
-      <div>
-        <h4>Media Stream Constraints options</h4>
-        <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
-      </div>
-
-      <div>
-        <span id="errorMsg"></span>
-      </div>
-
+      <h4>Odaberite rezoluciju:</h4>
       <div id="buttons">
         <button id="qvga">QVGA</button>
         <button id="vga">VGA</button>
@@ -93,9 +78,6 @@
       </div>
 
       <div id="videoblock">
-        <p id="dimensions"></p>
-
-        <video id="gum-res-local" playsinline autoplay></video>
         <div id="width">
           <label>Width <span></span>px:</label>
           <input type="range" min="0" max="7680" value="0">
@@ -105,10 +87,7 @@
       </div>
       <hr>
       <p class="pt-2" id="errormessage"></p>
-
-      <hr>
     </div>
-
   </div>
 </div>
 <% include partials/footer %>
@@ -125,11 +104,13 @@
   const errorMsgElement = document.querySelector('span#errorMsg');
   const recordedVideo = document.querySelector('video#recorded');
   const recordButton = document.querySelector('button#record');
+  const startStopButton = document.querySelector('button#start');
   recordButton.addEventListener('click', () => {
     if (recordButton.textContent === 'Start Recording') {
       startRecording();
     } else {
       stopRecording();
+      startStopButton.textContent = 'Zaustavi';
       recordButton.textContent = 'Start Recording';
       playButton.disabled = false;
       downloadButton.disabled = false;
@@ -238,17 +219,20 @@
   }
 
   document.querySelector('button#start').addEventListener('click', async () => {
-    const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
-    const constraints = {
-      audio: {
-        echoCancellation: {exact: hasEchoCancellation}
-      },
-      video: {
-        width: 1280, height: 720
-      }
-    };
-    console.log('Using media constraints:', constraints);
-    await init(constraints);
+    // const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
+    // const constraints = {
+    //   audio: {
+    //     echoCancellation: {exact: hasEchoCancellation}
+    //   },
+    //   video: {
+    //     width: 1280, height: 720
+    //   }
+    // };
+    // console.log('Using media constraints:', constraints);
+    // await init(constraints);
+    // const startStopButtons = document.getElementById('#start');
+    // console.log("Butto nstart", startStopButtons);
+    start();
   });
 
   /////////////////////////// FHD HD, 4K
@@ -350,28 +334,28 @@
     messagebox.style.display = 'none';
   }
 
-  function displayVideoDimensions(whereSeen) {
-    if (video.videoWidth) {
-      dimensions.innerText = 'Actual video dimensions: ' + video.videoWidth +
-              'x' + video.videoHeight + 'px.';
-      if (currentWidth !== video.videoWidth
-              || currentHeight !== video.videoHeight) {
-        console.log(whereSeen + ': ' + dimensions.innerText);
-        currentWidth = video.videoWidth;
-        currentHeight = video.videoHeight;
-      }
-    } else {
-      dimensions.innerText = 'Video not ready';
-    }
-  }
-
-  video.onloadedmetadata = () => {
-    displayVideoDimensions('loadedmetadata');
-  };
-
-  video.onresize = () => {
-    displayVideoDimensions('resize');
-  };
+  // function displayVideoDimensions(whereSeen) {
+  //   if (video.videoWidth) {
+  //     //dimensions.innerText = 'Actual video dimensions: ' + video.videoWidth +
+  //             'x' + video.videoHeight + 'px.';
+  //     if (currentWidth !== video.videoWidth
+  //             || currentHeight !== video.videoHeight) {
+  //       console.log(whereSeen + ': ' + dimensions.innerText);
+  //       currentWidth = video.videoWidth;
+  //       currentHeight = video.videoHeight;
+  //     }
+  //   } else {
+  //     //dimensions.innerText = 'Video not ready';
+  //   }
+  // }
+  //
+  // video.onloadedmetadata = () => {
+  //   displayVideoDimensions('loadedmetadata');
+  // };
+  //
+  // video.onresize = () => {
+  //   displayVideoDimensions('resize');
+  // };
 
   function constraintChange(e) {
     widthOutput.textContent = e.target.value;
