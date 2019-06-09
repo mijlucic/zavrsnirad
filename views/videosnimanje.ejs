@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= title %></title>
+  <title><%= title %> - SVEA</title>
   <% include partials/head %>
+
+  <style>
+    div.select {
+      display: inline-block;
+      margin: 0 0 1em 0;
+    }
+    p.small {
+      font-size: 0.7em;
+    }
+    label {
+      width: 12em;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
 <% include partials/header %>
@@ -11,8 +25,42 @@
   <div class="row">
     <div class="col-12">
       <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
+      <h4 id="odobrite">Prije svega odobrite snimanje zvuka i videa na vašem pregledniku</h4>
 
+      <video id="gum" playsinline autoplay></video>
+      <video id="recorded" playsinline loop></video>
+
+      <div>
+        <button id="start" type="button" class="btn btn-success">Pokrenite kameru</button>
+        <button id="record" disabled class="btn btn-danger">Pokrenite snimanje</button>
+        <button id="play" disabled class="btn btn-primary">Pokreni video</button>
+        <button id="download" disabled class="btn btn-secondary">Preuzmi video</button>
+      </div>
+
+      <div>
+        <h4>Odaberite opciju</h4>
+        <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+      </div>
+
+      <div>
+        <span id="errorMsg"></span>
+      </div>
+
+      <hr>
+
+      <div class="select">
+        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+      </div>
+
+      <div class="select">
+        <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+      </div>
+
+      <div class="select">
+        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+      </div>
+
+      <video id="video" playsinline autoplay></video>
 
       <hr>
 
@@ -34,6 +82,31 @@
       <div>
         <span id="errorMsg"></span>
       </div>
+
+      <div id="buttons">
+        <button id="qvga">QVGA</button>
+        <button id="vga">VGA</button>
+        <button id="hd">HD</button>
+        <button id="full-hd">Full HD</button>
+        <button id="fourK">4K</button>
+        <button id="eightK">8K</button>
+      </div>
+
+      <div id="videoblock">
+        <p id="dimensions"></p>
+
+        <video id="gum-res-local" playsinline autoplay></video>
+        <div id="width">
+          <label>Width <span></span>px:</label>
+          <input type="range" min="0" max="7680" value="0">
+        </div>
+        <input id="sizelock" type="checkbox">Lock video size<br>
+        <input id="aspectlock" type="checkbox">Lock aspect ratio<br>
+      </div>
+      <hr>
+      <p class="pt-2" id="errormessage"></p>
+
+      <hr>
     </div>
 
   </div>
@@ -41,6 +114,8 @@
 <% include partials/footer %>
 
 <script type="text/javascript" async>
+
+  ////////////////////////// Record, play i download
   const mediaSource = new MediaSource();
   mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
   let mediaRecorder;
@@ -176,15 +251,283 @@
     await init(constraints);
   });
 
-  // (function(i, s, o, g, r, a, m) {
-  //   i['GoogleAnalyticsObject']=r; i[r]=i[r]||function() {
-  //     (i[r].q=i[r].q||[]).push(arguments);
-  //   }, i[r].l=1*new Date(); a=s.createElement(o),
-  //           m=s.getElementsByTagName(o)[0]; a.async=1; a.src=g; m.parentNode.insertBefore(a, m);
-  // })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  //
-  // ga('create', 'UA-48530561-1', 'auto');
-  // ga('send', 'pageview');
+  /////////////////////////// FHD HD, 4K
+  const dimensions = document.querySelector('#dimensions');
+  const video = document.querySelector('video');
+  let stream;
+
+  const vgaButton = document.querySelector('#vga');
+  const qvgaButton = document.querySelector('#qvga');
+  const hdButton = document.querySelector('#hd');
+  const fullHdButton = document.querySelector('#full-hd');
+  const fourKButton = document.querySelector('#fourK');
+  const eightKButton = document.querySelector('#eightK');
+
+  const videoblock = document.querySelector('#videoblock');
+  const messagebox = document.querySelector('#errormessage');
+
+  const widthInput = document.querySelector('div#width input');
+  const widthOutput = document.querySelector('div#width span');
+  const aspectLock = document.querySelector('#aspectlock');
+  const sizeLock = document.querySelector('#sizelock');
+
+  let currentWidth = 0;
+  let currentHeight = 0;
+
+  vgaButton.onclick = () => {
+    getMedia(vgaConstraints);
+  };
+
+  qvgaButton.onclick = () => {
+    getMedia(qvgaConstraints);
+  };
+
+  hdButton.onclick = () => {
+    getMedia(hdConstraints);
+  };
+
+  fullHdButton.onclick = () => {
+    getMedia(fullHdConstraints);
+  };
+
+  fourKButton.onclick = () => {
+    getMedia(fourKConstraints);
+  };
+
+  eightKButton.onclick = () => {
+    getMedia(eightKConstraints);
+  };
+
+  const qvgaConstraints = {
+    video: {width: {exact: 320}, height: {exact: 240}}
+  };
+
+  const vgaConstraints = {
+    video: {width: {exact: 640}, height: {exact: 480}}
+  };
+
+  const hdConstraints = {
+    video: {width: {exact: 1280}, height: {exact: 720}}
+  };
+
+  const fullHdConstraints = {
+    video: {width: {exact: 1920}, height: {exact: 1080}}
+  };
+
+  const fourKConstraints = {
+    video: {width: {exact: 4096}, height: {exact: 2160}}
+  };
+
+  const eightKConstraints = {
+    video: {width: {exact: 7680}, height: {exact: 4320}}
+  };
+
+  function gotStream(mediaStream) {
+    stream = window.stream = mediaStream; // stream available to console
+    video.srcObject = mediaStream;
+    messagebox.style.display = 'none';
+    videoblock.style.display = 'block';
+    let track = mediaStream.getVideoTracks()[0];
+    let constraints = track.getConstraints();
+    console.log('Result constraints: ' + JSON.stringify(constraints));
+    if (constraints && constraints.width && constraints.width.exact) {
+      widthInput.value = constraints.width.exact;
+      widthOutput.textContent = constraints.width.exact;
+    } else if (constraints && constraints.width && constraints.width.min) {
+      widthInput.value = constraints.width.min;
+      widthOutput.textContent = constraints.width.min;
+    }
+  }
+
+  function errorMessage(who, what) {
+    let message = who + ': ' + what;
+    messagebox.innerText = message;
+    messagebox.style.display = 'block';
+    console.log(message);
+  }
+
+  function clearErrorMessage() {
+    messagebox.style.display = 'none';
+  }
+
+  function displayVideoDimensions(whereSeen) {
+    if (video.videoWidth) {
+      dimensions.innerText = 'Actual video dimensions: ' + video.videoWidth +
+              'x' + video.videoHeight + 'px.';
+      if (currentWidth !== video.videoWidth
+              || currentHeight !== video.videoHeight) {
+        console.log(whereSeen + ': ' + dimensions.innerText);
+        currentWidth = video.videoWidth;
+        currentHeight = video.videoHeight;
+      }
+    } else {
+      dimensions.innerText = 'Video not ready';
+    }
+  }
+
+  video.onloadedmetadata = () => {
+    displayVideoDimensions('loadedmetadata');
+  };
+
+  video.onresize = () => {
+    displayVideoDimensions('resize');
+  };
+
+  function constraintChange(e) {
+    widthOutput.textContent = e.target.value;
+    let track = window.stream.getVideoTracks()[0];
+    let constraints;
+    if (aspectLock.checked) {
+      constraints = {
+        width: {exact: e.target.value},
+        aspectRatio: {
+          exact: video.videoWidth / video.videoHeight
+        }
+      };
+    } else {
+      constraints = {width: {exact: e.target.value}};
+    }
+    clearErrorMessage();
+    console.log('applying ' + JSON.stringify(constraints));
+    track.applyConstraints(constraints)
+            .then(() => {
+              console.log('applyConstraint success');
+              displayVideoDimensions('applyConstraints');
+            })
+            .catch(err => {
+              errorMessage('applyConstraints', err.name);
+            });
+  }
+
+  widthInput.onchange = constraintChange;
+
+  sizeLock.onchange = () => {
+    if (sizeLock.checked) {
+      console.log('Setting fixed size');
+      video.style.width = '100%';
+    } else {
+      console.log('Setting auto size');
+      video.style.width = 'auto';
+    }
+  };
+
+  function getMedia(constraints) {
+    if (stream) {
+      stream.getTracks().forEach(track => {
+        track.stop();
+      });
+    }
+
+    clearErrorMessage();
+    videoblock.style.display = 'none';
+    navigator.mediaDevices.getUserMedia(constraints)
+            .then(gotStream)
+            .catch(e => {
+              errorMessage('Kamera ne podržava ovaj format videa!');
+            });
+  }
+
+  ///////////////// Choose devices
+  const videoElement = document.querySelector('video');
+  const audioInputSelect = document.querySelector('select#audioSource');
+  const audioOutputSelect = document.querySelector('select#audioOutput');
+  const videoSelect = document.querySelector('select#videoSource');
+  const selectors = [audioInputSelect, audioOutputSelect, videoSelect];
+
+  audioOutputSelect.disabled = !('sinkId' in HTMLMediaElement.prototype);
+
+  function gotDevices(deviceInfos) {
+    // Handles being called several times to update labels. Preserve values.
+    const values = selectors.map(select => select.value);
+    selectors.forEach(select => {
+      while (select.firstChild) {
+        select.removeChild(select.firstChild);
+      }
+    });
+    for (let i = 0; i !== deviceInfos.length; ++i) {
+      const deviceInfo = deviceInfos[i];
+      const option = document.createElement('option');
+      option.value = deviceInfo.deviceId;
+      if (deviceInfo.kind === 'audioinput') {
+        option.text = deviceInfo.label || `microphone ${audioInputSelect.length + 1}`;
+        audioInputSelect.appendChild(option);
+      } else if (deviceInfo.kind === 'audiooutput') {
+        option.text = deviceInfo.label || `speaker ${audioOutputSelect.length + 1}`;
+        audioOutputSelect.appendChild(option);
+      } else if (deviceInfo.kind === 'videoinput') {
+        option.text = deviceInfo.label || `camera ${videoSelect.length + 1}`;
+        videoSelect.appendChild(option);
+      } else {
+        console.log('Some other kind of source/device: ', deviceInfo);
+      }
+    }
+    selectors.forEach((select, selectorIndex) => {
+      if (Array.prototype.slice.call(select.childNodes).some(n => n.value === values[selectorIndex])) {
+        select.value = values[selectorIndex];
+      }
+    });
+  }
+
+  navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
+
+  // Attach audio output device to video element using device/sink ID.
+  function attachSinkId(element, sinkId) {
+    if (typeof element.sinkId !== 'undefined') {
+      element.setSinkId(sinkId)
+              .then(() => {
+                console.log(`Success, audio output device attached: ${sinkId}`);
+              })
+              .catch(error => {
+                let errorMessage = error;
+                if (error.name === 'SecurityError') {
+                  errorMessage = `You need to use HTTPS for selecting audio output device: ${error}`;
+                }
+                console.error(errorMessage);
+                // Jump back to first output device in the list as it's the default.
+                audioOutputSelect.selectedIndex = 0;
+              });
+    } else {
+      console.warn('Browser does not support output device selection.');
+    }
+  }
+
+  function changeAudioDestination() {
+    const audioDestination = audioOutputSelect.value;
+    attachSinkId(videoElement, audioDestination);
+  }
+
+  function gotStream(stream) {
+    window.stream = stream; // make stream available to console
+    videoElement.srcObject = stream;
+    // Refresh button list in case labels have become available
+    return navigator.mediaDevices.enumerateDevices();
+  }
+
+  function handleError(error) {
+    console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
+  }
+
+  function start() {
+    if (window.stream) {
+      window.stream.getTracks().forEach(track => {
+        track.stop();
+      });
+    }
+    const audioSource = audioInputSelect.value;
+    const videoSource = videoSelect.value;
+    const constraints = {
+      audio: {deviceId: audioSource ? {exact: audioSource} : undefined},
+      video: {deviceId: videoSource ? {exact: videoSource} : undefined}
+    };
+    navigator.mediaDevices.getUserMedia(constraints).then(gotStream).then(gotDevices).catch(handleError);
+  }
+
+  audioInputSelect.onchange = start;
+  audioOutputSelect.onchange = changeAudioDestination;
+
+  videoSelect.onchange = start;
+
+  start();
 </script>
 </body>
 </html>

@@ -23,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/node_modules/bootstrap/dist'));
 app.use(express.static(__dirname + '/node_modules/socket.io-client/dist'));
+app.use(express.static(__dirname + '/node_modules/font-awesome/css'));
 
 //app.use(express.static(__dirname + '/node_modules/socket.io/dist'));
 app.use(cookieParser());

@@ -1,36 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= title %></title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title><%= title %> - SVEA</title>
 
-  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
   <% include partials/head %>
-
+  <link rel='stylesheet' href='/stylesheets/style.css' />
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 
-  <!--<script src="/dist/RTCMultiConnection.min.js"></script>-->
-  <!--<script src="/node_modules/webrtc-adapter/out/adapter.js"></script>-->
-  <!--<script src="/socket.io/socket.io.js"></script>-->
-
-  <!--&lt;!&ndash; custom layout for HTML5 audio/video elements &ndash;&gt;-->
-  <!--<link rel="stylesheet" href="/dev/getHTMLMediaElement.css">-->
-  <!--<script src="/dev/getHTMLMediaElement.js"></script>-->
-
-  <!--<script src="/node_modules/recordrtc/RecordRTC.js"></script>-->
-  <style>
-    div.select {
-      display: inline-block;
-      margin: 0 0 1em 0;
-    }
-    p.small {
-      font-size: 0.7em;
-    }
-    label {
-      width: 12em;
-      display: inline-block;
-    }
-  </style>
 </head>
 <body>
 <% include partials/header %>
@@ -38,606 +15,25 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
-
-      <!--<div>-->
-        <!--Video: <select id="camera"></select>-->
-      <!--</div>-->
-      <!--<video id="videoTag" autoplay></video>-->
-
-      <!--<div>-->
-        <!--<label>Name</label>-->
-        <!--<input id="name" type="text"/>-->
-        <!--<label>Message</label>-->
-        <!--<input id="message" type="text"/>-->
-        <!--<input id="sendMessage" type="submit">-->
-        <!--<div id="chatArea">Message output: <br></div>-->
-      <!--</div>-->
-
+      <h1 class="mt-4"><%= title %></h1>
       <hr>
 
-      <p>Get available audio, video sources and audio output devices from <code>mediaDevices.enumerateDevices()</code>
-        then set the source for <code>getUserMedia()</code> using a <code>deviceId</code> constraint.</p>
-
-      <div class="select">
-        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+      <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h4 class="alert-heading">Upozorenje!</h4>
+        <p class="mb-0">Snimanje zaslona trenutno je eksperimentalna funkcionalnost koju podržavaju samo Chrome i Firefox preglednici. Da biste omogućili snimanje zaslona u Chrome-u, uključite funkcionalnost "Eksperimentalna web-platforma" (pogledajte <a href="chrome://flags/#enable-experimental-web-platform-features" target="_blank">chrome://flags/#enable-experimental-web-platform-features</a>).</p>
       </div>
 
-      <div class="select">
-        <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
-      </div>
-
-      <div class="select">
-        <label for="videoSource">Video source: </label><select id="videoSource"></select>
-      </div>
-
-      <video id="video" playsinline autoplay></video>
-
-      <p class="small"><b>Note:</b> If you hear a reverb sound your microphone is picking up the output of your
-        speakers/headset, lower the volume and/or move the microphone further away from your speakers/headset.</p>
-
-      <hr>
-
-      <video id="gum" playsinline autoplay muted></video>
-      <video id="recorded" playsinline loop></video>
-
-      <div>
-        <button id="start">Start camera</button>
-        <button id="record" disabled>Start Recording</button>
-        <button id="play" disabled>Play</button>
-        <button id="download" disabled>Download</button>
-      </div>
-
-      <div>
-        <h4>Media Stream Constraints options</h4>
-        <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
-      </div>
-
-      <div>
-        <span id="errorMsg"></span>
-      </div>
-
-      <div id="buttons">
-        <button id="qvga">QVGA</button>
-        <button id="vga">VGA</button>
-        <button id="hd">HD</button>
-        <button id="full-hd">Full HD</button>
-        <button id="fourK">4K</button>
-        <button id="eightK">8K</button>
-      </div>
-
-      <div id="videoblock">
-        <p id="dimensions"></p>
-
-        <video id="gum-res-local" playsinline autoplay></video>
-        <div id="width">
-          <label>Width <span></span>px:</label>
-          <input type="range" min="0" max="7680" value="0">
-        </div>
-        <input id="sizelock" type="checkbox">Lock video size<br>
-        <input id="aspectlock" type="checkbox">Lock aspect ratio<br>
-      </div>
-      <hr>
-      <p class="pt-2" id="errormessage"></p>
-
-      <hr>
-
-      <h4>Screen capturing is currently an experimental feature which is only supported by latest Chrome and Firefox!</h4>
-      <p>To enable this feature in Chrome, toggle the Experimental Web Platform feature (See chrome://flags/#enable-experimental-web-platform-features).</p>
       <screen-sharing></screen-sharing>
 
-      <p>Display the screensharing stream from <code>getDisplayMedia()</code> in a video element and record the stream.</p>
-
-
-
-
     </div>
-
 
   </div>
   </div>
 </div>
 <% include partials/footer %>
-<script type="text/javascript" async>
-  //Ovdje pocinje sa tutorijala
 
-  // var video = document.querySelector('video');
-  // var videoSelect = document.querySelector('#camera');
-  //
-  // //Socketio
-  //
-  // var myName = document.querySelector("#name");
-  // var myMessage = document.querySelector("#message");
-  // var sendMessage = document.querySelector("#sendMessage");
-  // var chatArea = document.querySelector("#chatArea");
-  // var ROOM = "chat";
-  //
-  // navigator.mediaDevices.enumerateDevices() //(getCameras); //getSources is depraceted
-  //         .then(function (sourceInfos) {
-  //           console.log("Kebg", sourceInfos.length);
-  //           for(var i=0; i !== sourceInfos.length; ++i) {
-  //             var sourceInfo = sourceInfos[i];
-  //             console.log("fsadf", sourceInfos[i])
-  //             var option = document.createElement('option');
-  //             option.value = sourceInfo.id;
-  //             if(sourceInfo.kind === 'videoinput') {
-  //               console.log("Bil osta", sourceInfo);
-  //               option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
-  //               videoSelect.appendChild(option);
-  //             }
-  //           }
-  //         });
-  //
-  // videoSelect.onchange = startStream;
-  // //startStream();
-  //
-  // // var socket = app.io();
-  // // app.io.on('connection', function(socket){
-  // //   console.log('a user connected');
-  // //   displayMessage(socket);
-  // //   socket.on('disconnect', function(){
-  // //     console.log('user disconnected');
-  // //   });
-  // // });
-  // // io = app.io.connect();
-  // // app.io.emit('ready', ROOM);
-  // // app.io.on('announce', function (data) {
-  // //   displayMessage(data.message);
-  // // });
-  //
-  // function displayMessage(message) {
-  //   chatArea.innerHTML = chatArea.innerHTML + "<br>" + message;
-  // }
-  //
-  // function startStream() {
-  //   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-  //   if (navigator.getUserMedia) {
-  //     var constraints = {
-  //       audio: false,
-  //       video: {
-  //         //width: 1280,
-  //         //height: 720,
-  //         mandatory: { //IZBRISAT NAKNADNIO
-  //           maxWidth: 640,
-  //           maxHeight: 360,
-  //           minWidth: 640,
-  //           minHeight: 360
-  //         }
-  //       }
-  //     };
-  //   } else {
-  //     console.log("getUserMedia not supported");
-  //   }
-  //   navigator.getUserMedia(constraints, onSuccess, onError);
-  // }
-  // function onSuccess(stream) {
-  //   video.srcObject = stream;
-  //   video.className = "grayscale_filter";
-  //   video.onloadedmetadata = function(e) {
-  //     video.play();
-  //   };
-  // }
-  // function onError(err) {
-  //   console.log("The following error occurred: " + err.name);
-  // }
-
-  ////////////////////////// Record, play i download
-  const mediaSource = new MediaSource();
-  mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
-  let mediaRecorder;
-  let recordedBlobs;
-  let sourceBuffer;
-
-  const errorMsgElement = document.querySelector('span#errorMsg');
-  const recordedVideo = document.querySelector('video#recorded');
-  const recordButton = document.querySelector('button#record');
-  recordButton.addEventListener('click', () => {
-    if (recordButton.textContent === 'Start Recording') {
-      startRecording();
-    } else {
-      stopRecording();
-      recordButton.textContent = 'Start Recording';
-      playButton.disabled = false;
-      downloadButton.disabled = false;
-    }
-  });
-
-  const playButton = document.querySelector('button#play');
-  playButton.addEventListener('click', () => {
-    const superBuffer = new Blob(recordedBlobs, {type: 'video/webm'});
-    recordedVideo.src = null;
-    recordedVideo.srcObject = null;
-    recordedVideo.src = window.URL.createObjectURL(superBuffer);
-    recordedVideo.controls = true;
-    recordedVideo.play();
-  });
-
-  const downloadButton = document.querySelector('button#download');
-  downloadButton.addEventListener('click', () => {
-    const blob = new Blob(recordedBlobs, {type: 'video/webm'});
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    a.download = 'test.webm';
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(() => {
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-    }, 100);
-  });
-
-  function handleSourceOpen(event) {
-    console.log('MediaSource opened');
-    sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
-    console.log('Source buffer: ', sourceBuffer);
-  }
-
-  function handleDataAvailable(event) {
-    if (event.data && event.data.size > 0) {
-      recordedBlobs.push(event.data);
-    }
-  }
-
-  function startRecording() {
-    recordedBlobs = [];
-    let options = {mimeType: 'video/webm;codecs=vp9'};
-    if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-      console.error(`${options.mimeType} is not Supported`);
-      errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
-      options = {mimeType: 'video/webm;codecs=vp8'};
-      if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-        console.error(`${options.mimeType} is not Supported`);
-        errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
-        options = {mimeType: 'video/webm'};
-        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-          console.error(`${options.mimeType} is not Supported`);
-          errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
-          options = {mimeType: ''};
-        }
-      }
-    }
-
-    try {
-      mediaRecorder = new MediaRecorder(window.stream, options);
-    } catch (e) {
-      console.error('Exception while creating MediaRecorder:', e);
-      errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
-      return;
-    }
-
-    console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
-    recordButton.textContent = 'Stop Recording';
-    playButton.disabled = true;
-    downloadButton.disabled = true;
-    mediaRecorder.onstop = (event) => {
-      console.log('Recorder stopped: ', event);
-    };
-    mediaRecorder.ondataavailable = handleDataAvailable;
-    mediaRecorder.start(10); // collect 10ms of data
-    console.log('MediaRecorder started', mediaRecorder);
-  }
-
-  function stopRecording() {
-    mediaRecorder.stop();
-    console.log('Recorded Blobs: ', recordedBlobs);
-  }
-
-  function handleSuccess(stream) {
-    recordButton.disabled = false;
-    console.log('getUserMedia() got stream:', stream);
-    window.stream = stream;
-
-    const gumVideo = document.querySelector('video#gum');
-    gumVideo.srcObject = stream;
-  }
-
-  async function init(constraints) {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia(constraints);
-      handleSuccess(stream);
-    } catch (e) {
-      console.error('navigator.getUserMedia error:', e);
-      errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
-    }
-  }
-
-  document.querySelector('button#start').addEventListener('click', async () => {
-    const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
-    const constraints = {
-      audio: {
-        echoCancellation: {exact: hasEchoCancellation}
-      },
-      video: {
-        width: 1280, height: 720
-      }
-    };
-    console.log('Using media constraints:', constraints);
-    await init(constraints);
-  });
-
-  /////////////////////////// FHD HD, 4K
-  const dimensions = document.querySelector('#dimensions');
-  const video = document.querySelector('video');
-  let stream;
-
-  const vgaButton = document.querySelector('#vga');
-  const qvgaButton = document.querySelector('#qvga');
-  const hdButton = document.querySelector('#hd');
-  const fullHdButton = document.querySelector('#full-hd');
-  const fourKButton = document.querySelector('#fourK');
-  const eightKButton = document.querySelector('#eightK');
-
-  const videoblock = document.querySelector('#videoblock');
-  const messagebox = document.querySelector('#errormessage');
-
-  const widthInput = document.querySelector('div#width input');
-  const widthOutput = document.querySelector('div#width span');
-  const aspectLock = document.querySelector('#aspectlock');
-  const sizeLock = document.querySelector('#sizelock');
-
-  let currentWidth = 0;
-  let currentHeight = 0;
-
-  vgaButton.onclick = () => {
-    getMedia(vgaConstraints);
-  };
-
-  qvgaButton.onclick = () => {
-    getMedia(qvgaConstraints);
-  };
-
-  hdButton.onclick = () => {
-    getMedia(hdConstraints);
-  };
-
-  fullHdButton.onclick = () => {
-    getMedia(fullHdConstraints);
-  };
-
-  fourKButton.onclick = () => {
-    getMedia(fourKConstraints);
-  };
-
-  eightKButton.onclick = () => {
-    getMedia(eightKConstraints);
-  };
-
-  const qvgaConstraints = {
-    video: {width: {exact: 320}, height: {exact: 240}}
-  };
-
-  const vgaConstraints = {
-    video: {width: {exact: 640}, height: {exact: 480}}
-  };
-
-  const hdConstraints = {
-    video: {width: {exact: 1280}, height: {exact: 720}}
-  };
-
-  const fullHdConstraints = {
-    video: {width: {exact: 1920}, height: {exact: 1080}}
-  };
-
-  const fourKConstraints = {
-    video: {width: {exact: 4096}, height: {exact: 2160}}
-  };
-
-  const eightKConstraints = {
-    video: {width: {exact: 7680}, height: {exact: 4320}}
-  };
-
-  function gotStream(mediaStream) {
-    stream = window.stream = mediaStream; // stream available to console
-    video.srcObject = mediaStream;
-    messagebox.style.display = 'none';
-    videoblock.style.display = 'block';
-    let track = mediaStream.getVideoTracks()[0];
-    let constraints = track.getConstraints();
-    console.log('Result constraints: ' + JSON.stringify(constraints));
-    if (constraints && constraints.width && constraints.width.exact) {
-      widthInput.value = constraints.width.exact;
-      widthOutput.textContent = constraints.width.exact;
-    } else if (constraints && constraints.width && constraints.width.min) {
-      widthInput.value = constraints.width.min;
-      widthOutput.textContent = constraints.width.min;
-    }
-  }
-
-  function errorMessage(who, what) {
-    let message = who + ': ' + what;
-    messagebox.innerText = message;
-    messagebox.style.display = 'block';
-    console.log(message);
-  }
-
-  function clearErrorMessage() {
-    messagebox.style.display = 'none';
-  }
-
-  function displayVideoDimensions(whereSeen) {
-    if (video.videoWidth) {
-      dimensions.innerText = 'Actual video dimensions: ' + video.videoWidth +
-              'x' + video.videoHeight + 'px.';
-      if (currentWidth !== video.videoWidth
-              || currentHeight !== video.videoHeight) {
-        console.log(whereSeen + ': ' + dimensions.innerText);
-        currentWidth = video.videoWidth;
-        currentHeight = video.videoHeight;
-      }
-    } else {
-      dimensions.innerText = 'Video not ready';
-    }
-  }
-
-  video.onloadedmetadata = () => {
-    displayVideoDimensions('loadedmetadata');
-  };
-
-  video.onresize = () => {
-    displayVideoDimensions('resize');
-  };
-
-  function constraintChange(e) {
-    widthOutput.textContent = e.target.value;
-    let track = window.stream.getVideoTracks()[0];
-    let constraints;
-    if (aspectLock.checked) {
-      constraints = {
-        width: {exact: e.target.value},
-        aspectRatio: {
-          exact: video.videoWidth / video.videoHeight
-        }
-      };
-    } else {
-      constraints = {width: {exact: e.target.value}};
-    }
-    clearErrorMessage();
-    console.log('applying ' + JSON.stringify(constraints));
-    track.applyConstraints(constraints)
-            .then(() => {
-              console.log('applyConstraint success');
-              displayVideoDimensions('applyConstraints');
-            })
-            .catch(err => {
-              errorMessage('applyConstraints', err.name);
-            });
-  }
-
-  widthInput.onchange = constraintChange;
-
-  sizeLock.onchange = () => {
-    if (sizeLock.checked) {
-      console.log('Setting fixed size');
-      video.style.width = '100%';
-    } else {
-      console.log('Setting auto size');
-      video.style.width = 'auto';
-    }
-  };
-
-  function getMedia(constraints) {
-    if (stream) {
-      stream.getTracks().forEach(track => {
-        track.stop();
-      });
-    }
-
-    clearErrorMessage();
-    videoblock.style.display = 'none';
-    navigator.mediaDevices.getUserMedia(constraints)
-            .then(gotStream)
-            .catch(e => {
-              errorMessage('Kamera ne podržava ovaj format videa!');
-            });
-  }
-
-  ///////////////// Choose devices
-  const videoElement = document.querySelector('video');
-  const audioInputSelect = document.querySelector('select#audioSource');
-  const audioOutputSelect = document.querySelector('select#audioOutput');
-  const videoSelect = document.querySelector('select#videoSource');
-  const selectors = [audioInputSelect, audioOutputSelect, videoSelect];
-
-  audioOutputSelect.disabled = !('sinkId' in HTMLMediaElement.prototype);
-
-  function gotDevices(deviceInfos) {
-    // Handles being called several times to update labels. Preserve values.
-    const values = selectors.map(select => select.value);
-    selectors.forEach(select => {
-      while (select.firstChild) {
-        select.removeChild(select.firstChild);
-      }
-    });
-    for (let i = 0; i !== deviceInfos.length; ++i) {
-      const deviceInfo = deviceInfos[i];
-      const option = document.createElement('option');
-      option.value = deviceInfo.deviceId;
-      if (deviceInfo.kind === 'audioinput') {
-        option.text = deviceInfo.label || `microphone ${audioInputSelect.length + 1}`;
-        audioInputSelect.appendChild(option);
-      } else if (deviceInfo.kind === 'audiooutput') {
-        option.text = deviceInfo.label || `speaker ${audioOutputSelect.length + 1}`;
-        audioOutputSelect.appendChild(option);
-      } else if (deviceInfo.kind === 'videoinput') {
-        option.text = deviceInfo.label || `camera ${videoSelect.length + 1}`;
-        videoSelect.appendChild(option);
-      } else {
-        console.log('Some other kind of source/device: ', deviceInfo);
-      }
-    }
-    selectors.forEach((select, selectorIndex) => {
-      if (Array.prototype.slice.call(select.childNodes).some(n => n.value === values[selectorIndex])) {
-        select.value = values[selectorIndex];
-      }
-    });
-  }
-
-  navigator.mediaDevices.enumerateDevices().then(gotDevices).catch(handleError);
-
-  // Attach audio output device to video element using device/sink ID.
-  function attachSinkId(element, sinkId) {
-    if (typeof element.sinkId !== 'undefined') {
-      element.setSinkId(sinkId)
-              .then(() => {
-                console.log(`Success, audio output device attached: ${sinkId}`);
-              })
-              .catch(error => {
-                let errorMessage = error;
-                if (error.name === 'SecurityError') {
-                  errorMessage = `You need to use HTTPS for selecting audio output device: ${error}`;
-                }
-                console.error(errorMessage);
-                // Jump back to first output device in the list as it's the default.
-                audioOutputSelect.selectedIndex = 0;
-              });
-    } else {
-      console.warn('Browser does not support output device selection.');
-    }
-  }
-
-  function changeAudioDestination() {
-    const audioDestination = audioOutputSelect.value;
-    attachSinkId(videoElement, audioDestination);
-  }
-
-  function gotStream(stream) {
-    window.stream = stream; // make stream available to console
-    videoElement.srcObject = stream;
-    // Refresh button list in case labels have become available
-    return navigator.mediaDevices.enumerateDevices();
-  }
-
-  function handleError(error) {
-    console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
-  }
-
-  function start() {
-    if (window.stream) {
-      window.stream.getTracks().forEach(track => {
-        track.stop();
-      });
-    }
-    const audioSource = audioInputSelect.value;
-    const videoSource = videoSelect.value;
-    const constraints = {
-      audio: {deviceId: audioSource ? {exact: audioSource} : undefined},
-      video: {deviceId: videoSource ? {exact: videoSource} : undefined}
-    };
-    navigator.mediaDevices.getUserMedia(constraints).then(gotStream).then(gotDevices).catch(handleError);
-  }
-
-  audioInputSelect.onchange = start;
-  audioOutputSelect.onchange = changeAudioDestination;
-
-  videoSelect.onchange = start;
-
-  start();
-</script>
 <script type="module">
-  //////////////////////// Screen capture
   import {LitElement, html} from 'https://unpkg.com/@polymer/lit-element@0.6.2/lit-element.js?module';
 
   class ScreenSharing extends LitElement {
@@ -649,7 +45,7 @@
       this.stream = null;
       this.chunks = [];
       this.mediaRecorder = null;
-      this.status = 'Inactive';
+      this.status = 'Neaktivan';
       this.recording = null;
     }
 
@@ -668,31 +64,35 @@
     }
 
     render() {
-      return html`<style>
-video#captured-media {
-    width: 100%;
-    //height: calc(width * 16 / 9);
-}
-:host {
-  display: block;
-  padding: 10px;
-  width: 100%;
-  height: 100%;
-}
-video {
-    --video-width: 100%;
-    //width: var(--video-width);
-    //height: calc(var(--video-width) * (16 / 9));
-}
-</style>
-<video ?controls="${this.recording !== null}" playsinline autoplay loop muted .src="${this.recording}"></video>
-<div>
-<p>Status: ${this.status}</p>
-<button ?disabled="${!this.enableStartCapture}" @click="${e => this._startCapturing(e)}">Start screen capture</button>
-<button ?disabled="${!this.enableStopCapture}" @click="${e => this._stopCapturing(e)}">Stop screen capture</button>
-<button ?disabled="${!this.enableDownloadRecording}" @click="${e => this._downloadRecording(e)}">Download recording</button>
-<a id="downloadLink" type="video/webm" style="display: none"></a>
-</div>`;
+      return html`
+          <style>
+            video#captured-media {
+                width: 1110px;
+                //height: calc(width * 16 / 9);
+            }
+            :host {
+              display: block;
+              padding: 10px;
+              width: 1110px;
+              //height: 100%;
+            }
+            video {
+                --video-width: 1110px;
+                //width: var(--video-width);
+                //height: calc(var(--video-width) * (16 / 9));
+            }
+          </style>
+          <link rel="stylesheet" href="css/bootstrap.min.css"/>
+          <div class="p-3">
+<i class="fas fa-download"></i>
+            <p>Status: ${this.status}</p>
+            <button ?disabled="${!this.enableStartCapture}" @click="${e => this._startCapturing(e)}" class="btn btn-success" type="button">Pokreni snimanje zaslona</button>
+            <button ?disabled="${!this.enableStopCapture}" @click="${e => this._stopCapturing(e)}" class="btn btn-danger">Zaustavi snimanje zaslona</button>
+            <button ?disabled="${!this.enableDownloadRecording}" @click="${e => this._downloadRecording(e)}" class="btn btn-secondary">Preuzmi snimak</button>
+            <a id="downloadLink" type="video/webm" style="display: none"></a>
+          </div>
+          <video ?controls="${this.recording !== null}" playsinline autoplay loop .src="${this.recording}" width="1110"></video>
+          `;
     }
 
     static _startScreenCapture() {
@@ -706,8 +106,8 @@ video {
     }
 
     async _startCapturing(e) {
-      console.log('Start capturing.');
-      this.status = 'Screen recording started.';
+      console.log('Pokrenuto snimanje.');
+      this.status = 'Pokrenuto snimanje zaslona.';
       this.enableStartCapture = false;
       this.enableStopCapture = true;
       this.enableDownloadRecording = false;
@@ -734,8 +134,8 @@ video {
     }
 
     _stopCapturing(e) {
-      console.log('Stop capturing.');
-      this.status = 'Screen recorded completed.';
+      console.log('Zaustavljeno snimanje.');
+      this.status = 'Snimanje zaslona završeno.';
       this.enableStartCapture = true;
       this.enableStopCapture = false;
       this.enableDownloadRecording = true;
@@ -757,7 +157,7 @@ video {
       const downloadLink = this.shadowRoot.querySelector('a#downloadLink');
       downloadLink.addEventListener('progress', e => console.log(e));
       downloadLink.href = this.recording;
-      downloadLink.download = 'screen-recording.webm';
+      downloadLink.download = 'snimak-ekrana_SVEA.webm';
       downloadLink.click();
     }
   }

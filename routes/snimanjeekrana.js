@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('snimanjeekrana', { title: 'Snimanje ekrana' });
+    res.render('snimanjeekrana', { title: 'Snimanje zaslona' });
 });
 
 module.exports = router;
