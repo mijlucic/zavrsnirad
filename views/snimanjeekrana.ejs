@@ -105,7 +105,6 @@
     }
 
     async _startCapturing(e) {
-      console.log('Pokrenuto snimanje.');
       this.status = 'Pokrenuto snimanje zaslona.';
       this.enableStartCapture = false;
       this.enableStopCapture = true;
@@ -120,7 +119,6 @@
       this.recording = null;
       this.stream = await ScreenSharing._startScreenCapture();
       this.stream.addEventListener('inactive', e => {
-        console.log('Capture stream inactive - stop recording!');
         this._stopCapturing(e);
       });
       this.mediaRecorder = new MediaRecorder(this.stream, {mimeType: 'video/webm'});
@@ -133,7 +131,6 @@
     }
 
     _stopCapturing(e) {
-      console.log('Zaustavljeno snimanje.');
       this.status = 'Snimanje zaslona završeno.';
       this.enableStartCapture = true;
       this.enableStopCapture = false;
@@ -148,7 +145,6 @@
     }
 
     _downloadRecording(e) {
-      console.log('Download recording.');
       this.enableStartCapture = true;
       this.enableStopCapture = false;
       this.enableDownloadRecording = false;

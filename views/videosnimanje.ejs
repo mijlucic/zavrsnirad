@@ -149,9 +149,7 @@
   });
 
   function handleSourceOpen(event) {
-    console.log('MediaSource opened');
     sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
-    console.log('Source buffer: ', sourceBuffer);
   }
 
   function handleDataAvailable(event) {
@@ -164,16 +162,16 @@
     recordedBlobs = [];
     let options = {mimeType: 'video/webm;codecs=vp9'};
     if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-      console.error(`${options.mimeType} is not Supported`);
-      errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
+      console.error(`${options.mimeType} nije podrzan.`);
+      errorMsgElement.innerHTML = `${options.mimeType} nije podrzan.`;
       options = {mimeType: 'video/webm;codecs=vp8'};
       if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-        console.error(`${options.mimeType} is not Supported`);
-        errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
+        console.error(`${options.mimeType} nije podrzan.`);
+        errorMsgElement.innerHTML = `${options.mimeType} nije podrzan.`;
         options = {mimeType: 'video/webm'};
         if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-          console.error(`${options.mimeType} is not Supported`);
-          errorMsgElement.innerHTML = `${options.mimeType} is not Supported`;
+          console.error(`${options.mimeType} nije podrzan.`);
+          errorMsgElement.innerHTML = `${options.mimeType} nije podrzan.`;
           options = {mimeType: ''};
         }
       }
@@ -182,32 +180,26 @@
     try {
       mediaRecorder = new MediaRecorder(window.stream, options);
     } catch (e) {
-      console.error('Exception while creating MediaRecorder:', e);
       errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
       return;
     }
 
-    console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
     recordButton.textContent = 'Zaustavi snimanje';
     startStopButton.hidden = true;
     playButton.disabled = true;
     downloadButton.disabled = true;
     mediaRecorder.onstop = (event) => {
-      console.log('Recorder stopped: ', event);
     };
     mediaRecorder.ondataavailable = handleDataAvailable;
     mediaRecorder.start(10); // collect 10ms of data
-    console.log('MediaRecorder started', mediaRecorder);
   }
 
   function stopRecording() {
     mediaRecorder.stop();
-    console.log('Recorded Blobs: ', recordedBlobs);
   }
 
   function handleSuccess(stream) {
     recordButton.disabled = false;
-    console.log('getUserMedia() got stream:', stream);
     window.stream = stream;
 
     const gumVideo = document.querySelector('video#gum');
@@ -234,10 +226,10 @@
         width: 1280, height: 720
       }
     };
-    console.log('Using media constraints:', constraints);
+
     await init(constraints);
     const startStopButtons = document.getElementById('#start');
-    // console.log("Butto nstart", startStopButtons);
+
     start();
   }
   document.querySelector('button#start').addEventListener('click', async () => {
@@ -250,10 +242,8 @@
         width: 1280, height: 720
       }
     };
-    console.log('Using media constraints:', constraints);
     await init(constraints);
     const startStopButtons = document.getElementById('#start');
-    // console.log("Butto nstart", startStopButtons);
     start();
   });
 
@@ -268,15 +258,11 @@
   const hdButton = document.querySelector('#hd');
   const fullHdButton = document.querySelector('#full-hd');
   const fourKButton = document.querySelector('#fourK');
-  //const eightKButton = document.querySelector('#eightK');
 
-  //const videoblock = document.querySelector('#videoblock');
   const messagebox = document.querySelector('#errormessage');
 
   const widthInput = document.querySelector('div#width input');
   const widthOutput = document.querySelector('div#width span');
-  //const aspectLock = document.querySelector('#aspectlock');
-  //const sizeLock = document.querySelector('#sizelock');
 
   let currentWidth = 0;
   let currentHeight = 0;
@@ -321,7 +307,6 @@
     video: {width: {exact: 4096}, height: {exact: 2160}}
   };
 
-
   function gotStream(mediaStream) {
     stream = window.stream = mediaStream; // stream available to console
     video.srcObject = mediaStream;
@@ -329,7 +314,6 @@
     videoblock.style.display = 'block';
     let track = mediaStream.getVideoTracks()[0];
     let constraints = track.getConstraints();
-    console.log('Result constraints: ' + JSON.stringify(constraints));
     if (constraints && constraints.width && constraints.width.exact) {
       widthInput.value = constraints.width.exact;
       widthOutput.textContent = constraints.width.exact;
@@ -343,7 +327,6 @@
     let message = who + ': ' + what;
     messagebox.innerText = message;
     messagebox.style.display = 'block';
-    console.log(message);
   }
 
   function clearErrorMessage() {
@@ -352,16 +335,11 @@
 
   function displayVideoDimensions(whereSeen) {
     if (video.videoWidth) {
-      //dimensions.innerText = 'Actual video dimensions: ' + video.videoWidth +
-              'x' + video.videoHeight + 'px.';
       if (currentWidth !== video.videoWidth
               || currentHeight !== video.videoHeight) {
-        //console.log(whereSeen + ': ' + dimensions.innerText);
         currentWidth = video.videoWidth;
         currentHeight = video.videoHeight;
       }
-    } else {
-      //dimensions.innerText = 'Video not ready';
     }
   }
 
@@ -377,21 +355,11 @@
     widthOutput.textContent = e.target.value;
     let track = window.stream.getVideoTracks()[0];
     let constraints;
-    // if (aspectLock.checked) {
-    //   constraints = {
-    //     width: {exact: e.target.value},
-    //     aspectRatio: {
-    //       exact: video.videoWidth / video.videoHeight
-    //     }
-    //   };
-    // } else {
-      constraints = {width: {exact: e.target.value}};
-    //}
+    constraints = {width: {exact: e.target.value}};
     clearErrorMessage();
-    console.log('applying ' + JSON.stringify(constraints));
+
     track.applyConstraints(constraints)
             .then(() => {
-              //console.log('applyConstraint success');
               //displayVideoDimensions('applyConstraints');
             })
             .catch(err => {
@@ -400,16 +368,6 @@
   }
 
   widthInput.onchange = constraintChange;
-
-  // sizeLock.onchange = () => {
-  //   if (sizeLock.checked) {
-  //     console.log('Setting fixed size');
-  //     video.style.width = '100%';
-  //   } else {
-  //     console.log('Setting auto size');
-  //     video.style.width = 'auto';
-  //   }
-  // };
 
   function getMedia(constraints) {
     if (stream) {
@@ -456,7 +414,6 @@
         option.text = deviceInfo.label || `camera ${videoSelect.length + 1}`;
         videoSelect.appendChild(option);
       } else {
-        console.log('Some other kind of source/device: ', deviceInfo);
       }
     }
     selectors.forEach((select, selectorIndex) => {
@@ -473,7 +430,6 @@
     if (typeof element.sinkId !== 'undefined') {
       element.setSinkId(sinkId)
               .then(() => {
-                console.log(`Success, audio output device attached: ${sinkId}`);
               })
               .catch(error => {
                 let errorMessage = error;
@@ -495,9 +451,9 @@
   }
 
   function gotStream(stream) {
-    window.stream = stream; // make stream available to console
+    window.stream = stream;
     video.srcObject = stream;
-    // Refresh button list in case labels have become available
+
     return navigator.mediaDevices.enumerateDevices();
   }
 
@@ -525,7 +481,7 @@
 
   videoSelect.onchange = start;
 
-  onLoadPage();  //start();
+  onLoadPage();
 </script>
 </body>
 </html>
