@@ -1,0 +1,21 @@
+{
+  "id": "1f57df18-872c-43fd-90d7-5d537e2b38e2",
+  "version": "2.0",
+  "name": "SVEA",
+  "url": "",
+  "tests": [{
+    "id": "4cefaffc-05af-4e23-996c-a395de3bb43b",
+    "name": "snimanje-videa",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "a71f8eac-f525-45ee-8112-8856dca1c40e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4cefaffc-05af-4e23-996c-a395de3bb43b"]
+  }],
+  "urls": [],
+  "plugins": []
+}
