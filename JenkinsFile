@@ -1,44 +1,84 @@
-#!/bin/sh
- 
-DESC="Jenkins CI Server"
-NAME=jenkins
-PIDFILE=/var/run/$NAME.pid
-RUN_AS=jenkins
-COMMAND="/usr/bin/java -- -jar /home/jenkins/jenkins.war"
- 
-d_start() {
-    start-stop-daemon --start --quiet --background --make-pidfile --pidfile $PIDFILE --chuid $RUN_AS --exec $COMMAND
+#!groovy
+pipeline {
+  agent {
+    label "master"
+  }
+  stages {
+    stage("Pokreni") {
+      parallel {
+        stage('Frontend') {
+          agent {
+            label "master"
+          }
+          steps {
+            retry(3) {
+              echo "On frontend"
+              dir("src\\frontend") {
+                bat "npm install"
+                bat "npm run build"
+              }
+              stash includes: 'artifacts\\frontend\\**', name: 'frontend-output'
+              echo "Finished frontend"
+            }
+          }
+        }
+      }
+      post {
+        success {
+          echo "post success"
+        }
+        failure {
+          echo "Only when we fail running the first stage."
+        }
+      }
+    }
+
+    stage('Arhiviraj') {
+      steps {
+        retry(3) {
+          echo "Deploy to test"
+          unstash "frontend-output"
+          unstash "emiswebapi-output"
+          sh "rm -rf output"
+          sh "mkdir output"
+          sh "mkdir output/api"
+          sh "cp -r artifacts/frontend/* output/"
+          sh "cp -r emiswebapi-output/* output/api/"
+          sh "cp web-template.config output/web.config"
+          archive includes: 'output/**'
+          stash includes: 'output/**', name: 'output'
+        }
+      }
+    }
+    stage('Objavi na localhost') {
+      agent {
+        label "master"
+      }
+      steps {
+        retry(3) {
+          unstash "output"
+          bat "if exist output\\web.config del output\\web.config"
+          bat "msdeploy.exe -verb:sync -source:contentPath='${WORKSPACE}\\app_offline-template.htm' -allowUntrusted:true -dest:contentPath=${params.TEST_SITE_LOCATION}\\api\\app_offline.htm,computerName='${params.TEST_WEB_DEPLOY_URL}',authType='basic',username='${params.TEST_USERNAME}',password='${params.TEST_PASSWORD}' -verbose"
+          bat "msdeploy.exe -verb:sync -source:IisApp='${WORKSPACE}\\output' -allowUntrusted:true -dest:iisapp='${params.IIS_TEST_APP_NAME}',computerName='${params.TEST_WEB_DEPLOY_URL}',authType='basic',username='${params.TEST_USERNAME}',password='${params.TEST_PASSWORD}' -verbose"
+        }
+      }
+    }
+    
+  }
+  post {
+    always {
+      deleteDir()
+    }
+    success {
+        echo "post success"
+    }
+    failure {
+        echo "post failure"
+        slackSend (color: '#ff0033', message: "Automatski deploy nije uspiod: '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+    }
+  }
+  options {
+    buildDiscarder(logRotator(numToKeepStr:'20'))
+    timeout(time: 60, unit: 'MINUTES')
+  }
 }
- 
-d_stop() {
-    start-stop-daemon --stop --quiet --pidfile $PIDFILE
-    if [ -e $PIDFILE ]
-        then rm $PIDFILE
-    fi
-}
- 
-case $1 in
-    start)
-    echo -n "Starting $DESC: $NAME"
-    d_start
-    echo "."
-    ;;
-    stop)
-    echo -n "Stopping $DESC: $NAME"
-    d_stop
-    echo "."
-    ;;
-    restart)
-    echo -n "Restarting $DESC: $NAME"
-    d_stop
-    sleep 1
-    d_start
-    echo "."
-    ;;
-    *)
-    echo "usage: $NAME {start|stop|restart}"
-    exit 1
-    ;;
-esac
- 
-exit 0
