@@ -13,11 +13,9 @@ pipeline {
           steps {
             retry(3) {
               echo "On frontend"
-              dir("src\\frontend") {
-                bat "npm install"
-                bat "npm run build"
+              dir("bin\\www") {
+                bat "C:\\Program Files\\nodejs\\node.exe"
               }
-              stash includes: 'artifacts\\frontend\\**', name: 'frontend-output'
               echo "Finished frontend"
             }
           }
@@ -32,37 +30,6 @@ pipeline {
         }
       }
     }
-
-    stage('Arhiviraj') {
-      steps {
-        retry(3) {
-          echo "Deploy to test"
-          unstash "frontend-output"
-          unstash "emiswebapi-output"
-          sh "rm -rf output"
-          sh "mkdir output"
-          sh "mkdir output/api"
-          sh "cp -r artifacts/frontend/* output/"
-          sh "cp -r emiswebapi-output/* output/api/"
-          sh "cp web-template.config output/web.config"
-          archive includes: 'output/**'
-          stash includes: 'output/**', name: 'output'
-        }
-      }
-    }
-    stage('Objavi na localhost') {
-      agent {
-        label "master"
-      }
-      steps {
-        retry(3) {
-          unstash "output"
-          bat "if exist output\\web.config del output\\web.config"
-          bat "msdeploy.exe -verb:sync -source:contentPath='${WORKSPACE}\\app_offline-template.htm' -allowUntrusted:true -dest:contentPath=${params.TEST_SITE_LOCATION}\\api\\app_offline.htm,computerName='${params.TEST_WEB_DEPLOY_URL}',authType='basic',username='${params.TEST_USERNAME}',password='${params.TEST_PASSWORD}' -verbose"
-          bat "msdeploy.exe -verb:sync -source:IisApp='${WORKSPACE}\\output' -allowUntrusted:true -dest:iisapp='${params.IIS_TEST_APP_NAME}',computerName='${params.TEST_WEB_DEPLOY_URL}',authType='basic',username='${params.TEST_USERNAME}',password='${params.TEST_PASSWORD}' -verbose"
-        }
-      }
-    }
     
   }
   post {
@@ -74,7 +41,6 @@ pipeline {
     }
     failure {
         echo "post failure"
-        slackSend (color: '#ff0033', message: "Automatski deploy nije uspiod: '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
     }
   }
   options {
