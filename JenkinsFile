@@ -50,7 +50,7 @@ pipeline {
         }
       }
     }
-    stage('Objavi na localhost') {
+    stage('Objavi na  localhost') {
       agent {
         label "master"
       }
