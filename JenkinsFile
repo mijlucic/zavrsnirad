@@ -14,7 +14,8 @@ pipeline {
             retry(3) {
               echo "On frontend"
               dir("bin\\www") {
-                bat "C:\\Program Files\\nodejs\\node.exe"
+                bat "npm install"
+                bat "npm run build"
               }
               echo "Finished frontend"
             }
