@@ -13,7 +13,7 @@ pipeline {
           steps {
             retry(3) {
               echo "On frontend"
-              dir("bin\\www") {
+              dir("") {
                 bat "npm install"
                 bat "npm run build"
               }
