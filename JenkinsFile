@@ -15,7 +15,11 @@ pipeline {
               echo "On frontend"
               dir("") {
                 bat "npm install"
-                bat "npm start"
+                timeout(time: 1, unit: 'MINUTES')
+                {
+                    bat "npm start"
+                }
+                
               }
               echo "Finished frontend"
             }

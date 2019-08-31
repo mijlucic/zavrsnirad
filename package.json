@@ -16,6 +16,7 @@
     "express.io": "^1.1.13",
     "font-awesome": "^4.7.0",
     "http-errors": "~1.6.3",
+    "mocha": "^6.2.0",
     "morgan": "~1.9.1",
     "recordrtc-nodejs": "^1.0.6",
     "selenium-webdriver": "^4.0.0-alpha.4",
