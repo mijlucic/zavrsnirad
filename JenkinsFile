@@ -15,7 +15,7 @@ pipeline {
               echo "On frontend"
               dir("") {
                 bat "npm install"
-                timeout(time: 1, unit: 'MINUTES')
+                timeout(time: 2, unit: 'MINUTES')
                 {
                     bat "npm start"
                 }
