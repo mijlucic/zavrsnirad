@@ -12,40 +12,38 @@ pipeline {
           }
           steps {
             retry(3) {
-              echo "On frontend"
+              echo "frontend"
               dir("") {
                 bat "npm install"
                 timeout(time: 2, unit: 'MINUTES')
                 {
                     bat "npm start"
                 }
-                
               }
-              echo "Finished frontend"
+              echo "Objava frontend-a uspjesno zavrsena."
             }
           }
         }
       }
       post {
         success {
-          echo "post success"
+          echo "Uspjesno."
         }
         failure {
-          echo "Only when we fail running the first stage."
+          echo "Neuspjesno."
         }
       }
     }
-    
   }
   post {
     always {
       deleteDir()
     }
     success {
-        echo "post success"
+        echo "Uspjesno."
     }
     failure {
-        echo "post failure"
+        echo "Neuspjesno."
     }
   }
   options {
